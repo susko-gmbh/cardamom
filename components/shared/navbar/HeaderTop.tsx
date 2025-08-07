@@ -13,7 +13,7 @@ const HeaderTop = ({ isSticky }: HeaderTopProps) => {
         isSticky ? 'opacity-0 -translate-y-full h-0' : 'opacity-100 translate-y-0'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center space-x-6 lg:space-x-8">
             {headerContacts.map((contact, index) => {
