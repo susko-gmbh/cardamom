@@ -5,6 +5,7 @@ import FAQSection from '@/components/home/FAQSection';
 import Location from '@/components/home/Loaction';
 import CardamomRestaurant from '@/components/home/restaurant/CardamomRestaurant';
 import RestaurantReservation from '@/components/home/RestaurantReservation';
+import TestimonialsSection from '@/components/home/TestimonialsSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <RestaurantReservation />
       <ContactSection />
       <FAQSection />
+      <TestimonialsSection />
     </main>
   );
 }
