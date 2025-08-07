@@ -1,4 +1,5 @@
 import Navbar from '@/components/shared/navbar/Navbar';
+import ScrollToTop from '@/components/shared/ScrollToTop';
 
 const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
   return (
@@ -6,6 +7,7 @@ const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <Navbar />
 
       {children}
+      <ScrollToTop />
     </div>
   );
 };
