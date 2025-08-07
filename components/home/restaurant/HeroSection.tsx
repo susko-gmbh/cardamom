@@ -1,3 +1,38 @@
+// Hero Image Grid Component
+const HeroImageGrid = () => {
+  return (
+    <div className="relative">
+      <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-4">
+          <div className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800  overflow-hidden">
+            <img
+              src="/home/westfield.jpg"
+              alt="Restaurant interior"
+              className="w-full h-full object-cover opacity-90"
+            />
+          </div>
+          <div className="aspect-square bg-gradient-to-br from-orange-600 to-red-600  overflow-hidden">
+            <img
+              src="/home/westfield02.jpg"
+              alt="Chef cooking"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="pt-8">
+          <div className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600  overflow-hidden">
+            <img
+              src="/home/westfield03.jpg"
+              alt="Food presentation"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   return (
     <div className="relative">
@@ -34,41 +69,6 @@ const HeroSection = () => {
 
           {/* Right Images */}
           <HeroImageGrid />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// Hero Image Grid Component
-const HeroImageGrid = () => {
-  return (
-    <div className="relative">
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-4">
-          <div className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800  overflow-hidden">
-            <img
-              src="/home/westfield.jpg"
-              alt="Restaurant interior"
-              className="w-full h-full object-cover opacity-90"
-            />
-          </div>
-          <div className="aspect-square bg-gradient-to-br from-orange-600 to-red-600  overflow-hidden">
-            <img
-              src="/home/westfield02.jpg"
-              alt="Chef cooking"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="pt-8">
-          <div className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600  overflow-hidden">
-            <img
-              src="/home/westfield03.jpg"
-              alt="Food presentation"
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
       </div>
     </div>

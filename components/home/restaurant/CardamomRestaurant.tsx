@@ -4,7 +4,7 @@ import PhilosophySection from './PhilosophySection';
 
 export default function CardamomRestaurant() {
   return (
-    <div className="min-h-screen bg-card text-white">
+    <div className="bg-card text-white">
       <HeroSection />
       <NavigationSection />
       <PhilosophySection />
