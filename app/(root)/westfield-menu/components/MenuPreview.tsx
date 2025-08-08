@@ -1,49 +1,50 @@
-import React from 'react';
+import Image from 'next/image';
 
 const MenuPreview = () => {
   return (
-    <section className="py-16 px-4 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
-          <div className="order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-lg shadow-2xl">
-              <img
-                src="/images/Cardamom05-12-23_10.avif"
-                alt="Cardamom Menu"
-                className="w-full h-auto object-cover"
+    <>
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Image Section */}
+            <div className="relative">
+              <Image
+                src="/home/location02.jpg"
+                alt="Cardamom Westfield Restaurant Interior"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover rounded-lg"
               />
             </div>
-          </div>
-          
-          {/* Content Section */}
-          <div className="order-1 lg:order-2">
-            <div className="space-y-6">
-              <span className="inline-block text-sm font-medium text-yellow-400 tracking-wider uppercase">
-                Unsere Speisekarte
-              </span>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Authentische Indische Küche
-              </h2>
-              
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Entdecken Sie unsere sorgfältig kuratierte Speisekarte für das Westfield Hamburg-Überseequartier, die traditionelle indische Aromen mit moderner Präsentation verbindet. Von würzigen Curries bis hin zu frischen Tandoori-Gerichten - jede Speise wird mit den feinsten Gewürzen und Zutaten zubereitet.
+
+            {/* Content Section */}
+            <div className="space-y-8">
+              <div>
+                <span className="text-primary text-lg font-medium mb-4 block">Unsere Küche</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                  Authentische indische Aromen
+                </h2>
+                <div className="w-16 h-px bg-primary mb-8"></div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Im Herzen von Hamburg-Überseequartier servieren wir Ihnen die authentischsten
+                  indischen Gerichte mit einem modernen Touch. Unsere Küche vereint traditionelle
+                  Rezepte mit frischen, lokalen Zutaten.
                 </p>
-                
-                <p>
-                  Unsere neue Location im Westfield bietet eine perfekte Balance zwischen authentischen Rezepten und zeitgemäßen Interpretationen, um Ihnen ein unvergessliches kulinarisches Erlebnis zu bieten.
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Von aromatischen Currys bis hin zu knusprigen Tandoor-Spezialitäten - jedes
+                  Gericht wird mit Leidenschaft und den feinsten Gewürzen zubereitet, um Ihnen ein
+                  unvergessliches kulinarisches Erlebnis zu bieten.
                 </p>
               </div>
-              
-              {/* Decorative element */}
-              <div className="w-16 h-1 bg-yellow-400 rounded"></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

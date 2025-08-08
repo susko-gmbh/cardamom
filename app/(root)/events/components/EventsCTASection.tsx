@@ -7,7 +7,7 @@ export default function EventsCTASection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/home/westfield03.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/Cardamom05-12-23_10.avif')`,
         }}
       />
 
@@ -15,15 +15,14 @@ export default function EventsCTASection() {
       <div className="relative z-10 text-center px-6">
         {/* Header Text */}
         <div className="mb-12">
-          <h1 className="text-white text-5xl md:text-5xl font-semibold leading-tight">
-            Bereit für Ihr perfektes Event?
+          <p className="text-white/80 text-lg font-light italic mb-4">Events & Catering</p>
+          <h1 className="text-white text-5xl md:text-6xl font-light leading-tight">
+            Bereit für Ihr
+            <br />
+            perfektes Event?
           </h1>
-          <p className="text-white/80 text-lg font-light italic mb-4">
-            Lassen Sie uns gemeinsam Ihr unvergessliches Event gestalten. Kontaktieren Sie uns für
-            eine persönliche Beratung.
-          </p>
         </div>
-
+          
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
