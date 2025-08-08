@@ -85,10 +85,13 @@ const Location = () => {
               <div className="p-6 lg:p-8">
                 <Link
                   href={location.href}
-                  className="inline-flex items-center justify-center w- border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8 py-3 text-sm lg:text-base font-medium tracking-wider uppercase"
+                  className="group relative overflow-hidden inline-flex items-center justify-center w- border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8 py-3 text-sm lg:text-base font-medium tracking-wider uppercase"
                 >
-                  <span>Mehr Erfahren</span>
-                  <span className="ml-4 text-xl">—</span>
+                  <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
+                    Mehr Erfahren
+                  </span>
+                  <div className="absolute top-1/2 left-0 -translate-y-px bg-black h-px w-0 opacity-0 transition-all duration-500 group-hover:w-7 group-hover:opacity-100 group-hover:translate-x-7"></div>
+                  <div className="bg-foreground h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
                 </Link>
               </div>
             </div>

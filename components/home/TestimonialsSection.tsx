@@ -184,7 +184,7 @@ const TestimonialsSection: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
                 currentSlide === index ? 'bg-primary scale-125' : 'bg-gray-600 hover:bg-gray-500'
               }`}
               aria-label={`Go to slide ${index + 1}`}

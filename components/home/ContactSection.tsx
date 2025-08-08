@@ -195,9 +195,13 @@ const ContactSection: React.FC = () => {
               <div>
                 <button
                   onClick={handleSubmit}
-                  className="bg-transparent border border-white text-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium"
+                  className="group relative cursor-pointer overflow-hidden bg-transparent border border-white text-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center gap-2"
                 >
-                  Nachricht Abschicken
+                  <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
+                    Nachricht Abschicken
+                  </span>
+                  <div className="absolute top-1/2 left-0 -translate-y-px bg-black h-px w-0 opacity-0 transition-all duration-500 group-hover:w-7 group-hover:opacity-100 group-hover:translate-x-7"></div>
+                  <div className="bg-white h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
                 </button>
               </div>
             </div>

@@ -27,7 +27,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
                     href={subItem.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                    className="block text-muted-foreground hover:text-primary transition-colors py-1 cursor-pointer"
                     onClick={onLinkClick}
                   >
                     {subItem.label}
@@ -35,7 +35,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
                 ) : (
                   <Link
                     href={subItem.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                    className="block text-muted-foreground hover:text-primary transition-colors py-1 cursor-pointer"
                     onClick={onLinkClick}
                   >
                     {subItem.label}
@@ -52,7 +52,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
       <Link
         key={index}
         href={item.href!}
-        className="block text-foreground hover:text-primary transition-colors font-medium py-3"
+        className="block text-foreground hover:text-primary transition-colors font-medium py-3 cursor-pointer"
         onClick={onLinkClick}
       >
         {item.label}
@@ -78,7 +78,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
                   <Link
                     key={index}
                     href={item.href}
-                    className="block text-muted-foreground hover:text-primary transition-colors py-1"
+                    className="block text-muted-foreground hover:text-primary transition-colors py-1 cursor-pointer"
                     onClick={onLinkClick}
                   >
                     {item.label}
@@ -99,7 +99,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
               <Link
                 key={index}
                 href={contact.href}
-                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
                 onClick={onLinkClick}
               >
                 <IconComponent className="h-4 w-4" />
@@ -123,7 +123,7 @@ const MobileSheetContent = ({ onLinkClick }: MobileSheetContentProps) => {
 
           <Link
             href="#"
-            className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center space-x-3 text-muted-foreground hover:text-primary transition-colors cursor-pointer"
             onClick={onLinkClick}
           >
             <Instagram className="h-4 w-4" />

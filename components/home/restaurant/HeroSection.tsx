@@ -61,8 +61,12 @@ const HeroSection = () => {
                 <p>20457 Hamburg</p>
               </div>
 
-              <button className="border border-[#c6a87d] text-[#c6a87d] px-8 py-3 mt-6 hover:bg-[#c6a87d] hover:text-[#080b0e] transition-all duration-300 tracking-wide">
-                Jetzt Tisch Reservieren -
+              <button className="group relative overflow-hidden border border-[#c6a87d] text-[#c6a87d] px-8 py-3 mt-6 hover:bg-[#c6a87d] hover:text-[#080b0e] transition-all duration-300 tracking-wide flex items-center justify-center gap-2">
+                <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
+                  Jetzt Tisch Reservieren
+                </span>
+                <div className="absolute top-1/2 left-0 -translate-y-px bg-[#c6a87d] h-px w-0 opacity-0 transition-all duration-500 group-hover:w-7 group-hover:opacity-100 group-hover:translate-x-7"></div>
+                <div className="bg-[#c6a87d] h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
               </button>
             </div>
           </div>

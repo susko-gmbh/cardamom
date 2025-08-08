@@ -25,12 +25,20 @@ const RestaurantReservation: React.FC = () => {
 
         {/* Location Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-white hover:bg-amber-600 text-black font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-amber-500/50">
-            Hohe Bleichen ——
+          <button className="group  relative overflow-hidden px-8 py-4 bg-white hover:bg-primary text-black font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2">
+            <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
+              Hohe Bleichen
+            </span>
+            <div className="absolute top-1/2 left-0 -translate-y-px bg-white h-px w-0 opacity-0 transition-all duration-500 group-hover:w-7 group-hover:opacity-100 group-hover:translate-x-7"></div>
+            <div className="bg-primary h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
           </button>
 
-          <button className="px-8 py-4 bg-transparent hover:bg-white/10 text-white font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-white/30">
-            Cardamom Westfield ——
+          <button className="group relative overflow-hidden px-8 py-4 bg-transparent hover:bg-white/10 text-foreground font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2">
+            <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
+              Cardamom Westfield
+            </span>
+            <div className="absolute top-1/2 left-0 -translate-y-px bg-foreground h-px w-0 opacity-0 transition-all duration-500 group-hover:w-7 group-hover:opacity-100 group-hover:translate-x-7"></div>
+            <div className="bg-foreground h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
           </button>
         </div>
       </div>

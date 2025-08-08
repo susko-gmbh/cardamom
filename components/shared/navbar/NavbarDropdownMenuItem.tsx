@@ -29,7 +29,7 @@ const NavbarDropdownMenuItem = ({ item }: NavbarDropdownMenuItemProps) => {
   if (item.subItems) {
     return (
       <div
-        className="relative"
+        className="relative h-full py-8"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
@@ -42,20 +42,24 @@ const NavbarDropdownMenuItem = ({ item }: NavbarDropdownMenuItemProps) => {
             <span>{item.label}</span>
             <ChevronDown className="h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-card border-border">
+          <DropdownMenuContent
+            className="bg-card  mt-8 border border-t-0 border-primary rounded-none shadow-lg"
+            sideOffset={0}
+            align="start"
+          >
             {item.subItems.map((subItem, subIndex) => {
               const isSubItemActive = subItem.href === pathname;
               return (
                 <ShadcnDropdownMenuItem
                   key={subIndex}
-                  className="hover:bg-accent focus:bg-accent p-0"
+                  className="hover:bg-accent focus:bg-accent !p-0 "
                 >
                   {subItem.external ? (
                     <a
                       href={subItem.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-full px-2 py-1.5 block transition-colors ${
+                      className={`w-full px-6 border-t border-t-primary hover:bg-primary hover:text-white  text-lg py-2.5 block transition-colors ${
                         isSubItemActive ? 'text-primary' : 'text-foreground hover:text-primary'
                       }`}
                     >
@@ -64,7 +68,7 @@ const NavbarDropdownMenuItem = ({ item }: NavbarDropdownMenuItemProps) => {
                   ) : (
                     <Link
                       href={subItem.href}
-                      className={`w-full px-2 py-1.5 block transition-colors ${
+                      className={`w-full px-6 border-t border-t-primary hover:bg-primary hover:text-white  text-lg py-2.5 block transition-colors ${
                         isSubItemActive ? 'text-primary' : 'text-foreground hover:text-primary'
                       }`}
                     >
@@ -83,7 +87,7 @@ const NavbarDropdownMenuItem = ({ item }: NavbarDropdownMenuItemProps) => {
   return (
     <Link
       href={item.href!}
-      className={`transition-colors font-medium ${
+      className={` transition-colors font-medium ${
         isActive ? 'text-primary' : 'text-foreground hover:text-primary'
       }`}
     >
