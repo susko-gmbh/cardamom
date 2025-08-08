@@ -1,7 +1,7 @@
-import CTASection from '@/components/hohe-bleichen/CTASection';
-import HeroSection from '@/components/hohe-bleichen/HeroSection';
-import LocationShowcase from '@/components/hohe-bleichen/LocationShowcase';
-import OpeningHours from '@/components/hohe-bleichen/OpeningHours';
+import CTASection from '@/app/(root)/hohe-bleichen/components/CTASection';
+import HeroSection from '@/app/(root)/hohe-bleichen/components/HeroSection';
+import LocationShowcase from '@/app/(root)/hohe-bleichen/components/LocationShowcase';
+import OpeningHours from '@/app/(root)/hohe-bleichen/components/OpeningHours';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
