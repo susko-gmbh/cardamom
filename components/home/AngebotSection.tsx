@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 // TypeScript interfaces
@@ -103,10 +104,10 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
 
   // Icons array matching the services
   const icons: React.ReactNode[] = [
-    <VeganIcon />,
-    <AuthenticIcon />,
-    <CocktailIcon />,
-    <SeatingIcon />,
+    <VeganIcon key="vegan" />,
+    <AuthenticIcon key="authentic" />,
+    <CocktailIcon key="cocktail" />,
+    <SeatingIcon key="seating" />,
   ];
 
   return (
@@ -118,7 +119,9 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
 
         {/* Right Side - Full Image */}
         <div className="w-1/2 relative">
-          <img
+          <Image
+            width={500}
+            height={500}
             src="/home/offer.jpg"
             alt="Restaurant dishes"
             className="w-full h-full object-cover"

@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 
 interface FAQItem {
@@ -112,7 +113,9 @@ const FAQSection: React.FC = () => {
                 transition={{ duration: 0.4 }}
                 className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden"
               >
-                <img
+                <Image
+                  width={600}
+                  height={500}
                   src={currentItem.leftImages[0]}
                   alt="Left image 1"
                   className="w-full h-full object-cover"
@@ -129,7 +132,9 @@ const FAQSection: React.FC = () => {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden"
               >
-                <img
+                <Image
+                  width={600}
+                  height={500}
                   src={currentItem.leftImages[1]}
                   alt="Left image 2"
                   className="w-full h-full object-cover"
@@ -183,7 +188,9 @@ const FAQSection: React.FC = () => {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden"
               >
-                <img
+                <Image
+                  width={600}
+                  height={500}
                   src={currentItem.rightImages[0]}
                   alt="Right image"
                   className="w-full h-full object-cover"

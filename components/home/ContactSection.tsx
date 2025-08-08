@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 interface ContactFormData {
@@ -90,7 +91,9 @@ const ContactSection: React.FC = () => {
 
           {/* Chef Team Image */}
           <div className="relative z-10 h-full">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/home/reservation.jpg"
               alt="Chef Team"
               className="w-full mx-auto h-full object-cover"
@@ -180,7 +183,7 @@ const ContactSection: React.FC = () => {
                     className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                   />
                   <label htmlFor="recaptcha" className="text-gray-800 text-sm">
-                    I'm not a robot
+                    I&apos;m not a robot
                   </label>
                   <div className="ml-auto">
                     <div className="text-xs text-gray-500">

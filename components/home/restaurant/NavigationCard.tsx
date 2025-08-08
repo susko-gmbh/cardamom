@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const NavigationCard = ({
   title,
   imageUrl,
@@ -12,7 +14,9 @@ const NavigationCard = ({
   return (
     <div className="group cursor-pointer border pb-4">
       <div className={`aspect-square bg-gradient-to-br ${gradientColors} overflow-hidden mb-4`}>
-        <img
+        <Image
+          width={600}
+          height={500}
           src={imageUrl ? imageUrl : '/home/westfield.jpg'}
           alt={imageAlt}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

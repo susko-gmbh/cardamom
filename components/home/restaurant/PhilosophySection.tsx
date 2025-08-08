@@ -42,7 +42,7 @@ const circleCheckIcon = (
     />
   </svg>
 );
-const PhilosophySection = ({ background = 'bg-background' }: { background?: string }) => {
+const PhilosophySection = () => {
   const features = [
     {
       title: 'Vegane Küche',

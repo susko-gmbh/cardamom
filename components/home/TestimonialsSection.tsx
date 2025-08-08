@@ -71,16 +71,6 @@ const TestimonialsSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [isAutoplay, itemsPerView]);
 
-  const nextSlide = () => {
-    const maxSlide = Math.ceil(testimonials.length / itemsPerView) - 1;
-    setCurrentSlide((prev) => (prev >= maxSlide ? 0 : prev + 1));
-  };
-
-  const prevSlide = () => {
-    const maxSlide = Math.ceil(testimonials.length / itemsPerView) - 1;
-    setCurrentSlide((prev) => (prev <= 0 ? maxSlide : prev - 1));
-  };
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };

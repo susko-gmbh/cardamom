@@ -1,48 +1,40 @@
-import React from 'react';
-
 const MenuPDF = () => {
   return (
-    <section className="py-16 px-4 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
+    <section className="py-20 bg-card">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block text-sm font-medium text-yellow-400 tracking-wider uppercase mb-4">
-            Speisekarte
-          </span>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Unsere komplette Speisekarte
           </h2>
-          
-          {/* Decorative element */}
-          <div className="w-16 h-1 bg-yellow-400 rounded mx-auto"></div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Entdecken Sie unser vollständiges Angebot an authentischen indischen Gerichten
+          </p>
         </div>
-        
+
         {/* PDF Container */}
-        <div className="bg-gray-800 rounded-lg p-4 shadow-2xl">
-          <iframe
-            src="/Speisekarte Westfield.pdf"
-            width="100%"
-            height="800"
-            className="rounded-lg border-none"
-            title="Cardamom Westfield Speisekarte"
-            style={{
-              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
-            }}
-          >
-            <p className="text-center text-gray-400 py-8">
-              Ihr Browser unterstützt keine PDF-Anzeige. 
-              <a 
-                href="/Speisekarte Westfield.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-yellow-400 hover:text-yellow-300 underline ml-1"
-              >
-                Klicken Sie hier, um die Speisekarte herunterzuladen
-              </a>
-              .
-            </p>
-          </iframe>
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-background/60  shadow-2xl overflow-hidden p-10">
+            <iframe
+              src="/Speisekarte Westfield.pdf"
+              width="100%"
+              height="1000px"
+              className="border-none"
+              title="Cardamom Speisekarte Hohe Bleichen"
+              loading="lazy"
+            ></iframe>
+          </div>
+          {/* <div className="mt-8 text-center">
+            <p className="text-muted-foreground mb-4">Können Sie die Speisekarte nicht sehen?</p>
+            <a
+              href="/Speisekarte Westfield.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-8 py-3 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-colors duration-300"
+            >
+              Speisekarte herunterladen
+            </a>
+          </div> */}
         </div>
       </div>
     </section>
