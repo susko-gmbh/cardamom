@@ -75,6 +75,16 @@ export const locations: Location[] = [
 ];
 
 export const reservationItems: SubMenuItem[] = [
-  { label: 'Hohe Bleichen', href: '/reservierung/hohe-bleichen' },
-  { label: 'Westfield', href: '/reservierung/westfield' },
+  { 
+    label: 'Hohe Bleichen', 
+    href: 'https://reservation.dish.co/landingPage/hydra-82fbb0fc-e083-4e9e-b131-a196d1651064',
+    external: true 
+  },
+  { 
+    label: 'Westfield', 
+    href: 'https://reservation.dish.co/landingPage/hydra-00847480-0346-11f0-bea1-b9a5dc15ca0b',
+    external: true 
+  },
 ];
+
+export const instagramUrl = 'https://www.instagram.com/cardamom.hamburg/';

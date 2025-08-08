@@ -1,4 +1,4 @@
-import { headerContacts, locations } from '@/data/navigation';
+import { headerContacts, locations, instagramUrl } from '@/data/navigation';
 import { Instagram } from 'lucide-react';
 import Link from 'next/link';
 
@@ -47,7 +47,12 @@ const HeaderTop = ({ isSticky }: HeaderTopProps) => {
             </div>
           </div>
 
-          <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link 
+            href={instagramUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
             <Instagram className="h-4 w-4 lg:h-5 lg:w-5" />
           </Link>
         </div>

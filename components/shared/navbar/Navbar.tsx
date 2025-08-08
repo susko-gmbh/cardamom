@@ -40,8 +40,10 @@ const Navbar = () => {
             {/* Desktop Navigation - Centered */}
             <DesktopNavigation />
 
-            {/* Reservation Button */}
-            <ReservationButton />
+            {/* Action Buttons */}
+            <div className="flex items-center gap-4">
+              <ReservationButton />
+            </div>
 
             {/* Mobile Menu Sheet */}
             <MobileMenu />
