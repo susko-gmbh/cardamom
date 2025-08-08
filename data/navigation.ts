@@ -16,7 +16,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     label: 'Über Uns',
-    href: '/ueber-uns',
+    href: '/about-us',
   },
   {
     label: 'Events',

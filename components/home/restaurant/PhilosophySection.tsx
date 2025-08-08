@@ -42,7 +42,7 @@ const circleCheckIcon = (
     />
   </svg>
 );
-const PhilosophySection = () => {
+const PhilosophySection = ({ background = 'bg-background' }: { background?: string }) => {
   const features = [
     {
       title: 'Vegane Küche',
@@ -57,50 +57,52 @@ const PhilosophySection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 py-16">
-      <div className="grid lg:grid-cols-2 gap-16 items-center justify-center">
-        {/* Left Image */}
-        <div className="relative">
-          <div className="flex items-center justify-center">
-            <Image
-              width={500}
-              height={500}
-              src="/home/traditionMeets.png"
-              alt="Signature dish"
-              className="w-3/4"
-            />
-          </div>
-        </div>
-
-        {/* Right Content */}
-        <div className="space-y-8">
-          <div>
-            <p className="text-[#c6a87d] text-sm font-light tracking-wide mb-4">
-              Cardamom – Progressive Indian Dining
-            </p>
-            <h2 className="text-4xl lg:text-5xl font-light leading-tight mb-6">
-              Wo Tradition auf Innovation trifft, und Geschmack zu einer Reise wird.
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Bei uns geht es nicht nur um Mahlzeiten; es geht um eine Reise durch die Aromen und
-              Gewürze, die die Vielfalt Indiens repräsentieren. Unser Restaurant lädt Sie ein, die
-              Magie von Cardamom zu erleben, wo jede Mahlzeit mit Liebe zubereitet wird und jede
-              Geschmacksnote eine Geschichte erzählt. Tauchen Sie ein in die Welt der exquisiten
-              indischen Küche und lassen Sie sich von unseren Gerichten verzaubern, die sowohl die
-              Essenz der Tradition als auch die Raffinesse der Moderne einfangen.
-            </p>
-          </div>
-
-          {/* Features */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {features.map((feature, index) => (
-              <FeatureItem
-                key={index}
-                title={feature.title}
-                description={feature.description}
-                icon={feature.icon}
+    <div className={'bg-card'}>
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center justify-center">
+          {/* Left Image */}
+          <div className="relative">
+            <div className="flex items-center justify-center">
+              <Image
+                width={500}
+                height={500}
+                src="/home/traditionMeets.png"
+                alt="Signature dish"
+                className="w-3/4"
               />
-            ))}
+            </div>
+          </div>
+
+          {/* Right Content */}
+          <div className="space-y-8">
+            <div>
+              <p className="text-[#c6a87d] text-2xl miniver-regular font-light tracking-wide mb-4">
+                Cardamom – Progressive Indian Dining
+              </p>
+              <h2 className="text-4xl lg:text-5xl font-light leading-tight mb-6">
+                Wo Tradition auf Innovation trifft, und Geschmack zu einer Reise wird.
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Bei uns geht es nicht nur um Mahlzeiten; es geht um eine Reise durch die Aromen und
+                Gewürze, die die Vielfalt Indiens repräsentieren. Unser Restaurant lädt Sie ein, die
+                Magie von Cardamom zu erleben, wo jede Mahlzeit mit Liebe zubereitet wird und jede
+                Geschmacksnote eine Geschichte erzählt. Tauchen Sie ein in die Welt der exquisiten
+                indischen Küche und lassen Sie sich von unseren Gerichten verzaubern, die sowohl die
+                Essenz der Tradition als auch die Raffinesse der Moderne einfangen.
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {features.map((feature, index) => (
+                <FeatureItem
+                  key={index}
+                  title={feature.title}
+                  description={feature.description}
+                  icon={feature.icon}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
