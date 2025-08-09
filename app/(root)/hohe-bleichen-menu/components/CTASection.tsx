@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const CTASection = () => {
   return (
-    <section className="min-h-96 relative flex items-center justify-center">
+    <section className="min-h-80 sm:min-h-96 relative flex items-center justify-center">
       {/* Fixed Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -14,23 +14,23 @@ const CTASection = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-4 sm:px-6 py-8 sm:py-12">
         {/* Header Text */}
-        <div className="mb-12">
-          <h1 className="text-white text-4xl md:text-5xl font-semibold leading-tight mb-6">
+        <div className="mb-8 sm:mb-12">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight mb-4 sm:mb-6 px-2">
             Bereit für ein kulinarisches Abenteuer?
           </h1>
-          <p className="text-white/90 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto px-2">
             Reservieren Sie jetzt Ihren Tisch und erleben Sie die authentische
             indische Küche in eleganter Atmosphäre.
           </p>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
           <Link
             href="https://reservation.dish.co/landingPage/hydra-82fbb0fc-e083-4e9e-b131-a196d1651064"
-            className="group relative overflow-hidden px-8 py-4 bg-white hover:bg-primary text-black font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2 cursor-pointer"
+            className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-primary text-black font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Jetzt reservieren
@@ -42,7 +42,7 @@ const CTASection = () => {
           <Link
             href="/Speisekarte.pdf"
             target="_blank"
-            className="group relative overflow-hidden px-8 py-4 bg-transparent hover:bg-white/10 text-white font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2 cursor-pointer"
+            className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:bg-white/10 text-white font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Speisekarte herunterladen

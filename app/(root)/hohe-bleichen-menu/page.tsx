@@ -10,12 +10,47 @@ export const metadata: Metadata = {
     'Entdecken Sie unsere authentische indische Speisekarte im Cardamom Hohe Bleichen. Von traditionellen Curries bis hin zu zeitgemäßen Kreationen - jedes Gericht erzählt eine Geschichte von Aromen und Gewürzen.',
   keywords:
     'Cardamom, Speisekarte, Hohe Bleichen, Hamburg, indisches Restaurant, authentische indische Küche, Curry, Tandoori, Gewürze, Menu',
+  authors: [{ name: 'Cardamom Hamburg', url: 'https://cardamom-hamburg.de' }],
+  publisher: 'Cardamom Hamburg - developed by susko',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg',
     description:
       'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen.',
     type: 'website',
     locale: 'de_DE',
+    url: 'https://cardamom-hamburg.de/hohe-bleichen-menu',
+    siteName: 'Cardamom Hamburg',
+    images: [
+      {
+        url: 'https://cardamom-hamburg.de/hohe-bleichen/menu-preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cardamom Hohe Bleichen Speisekarte - Authentische Indische Küche',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg',
+    description:
+      'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen.',
+    images: ['https://cardamom-hamburg.de/hohe-bleichen/menu-preview.jpg'],
   },
   alternates: {
     canonical: '/hohe-bleichen-menu',
