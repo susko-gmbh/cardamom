@@ -18,7 +18,7 @@ const miniver = Miniver({
 export const metadata: Metadata = {
   title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
   description:
-    'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
+    'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
   keywords:
     'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, susko, susko restaurant, susko cardamom, susko hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service.',
+      'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
     url: 'https://cardamom-restaurant.com',
-    siteName: 'Cardamom Restaurant by Susko',
+    siteName: 'Cardamom Restaurant  ',
     images: [
       {
         url: '/og-image.jpg',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service.',
+      'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
     images: ['/og-image.jpg'],
     creator: '@susko',
     site: '@susko',
@@ -93,58 +93,56 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Restaurant",
-              "name": "Cardamom Restaurant",
-              "description": "Authentic Indian cuisine and fine dining experience in Hamburg",
-              "url": "https://cardamom-restaurant.com",
-              "telephone": "+49-40-123456789",
-              "priceRange": "$$",
-              "servesCuisine": "Indian",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Hohe Bleichen 10",
-                "addressLocality": "Hamburg",
-                "postalCode": "20354",
-                "addressCountry": "DE"
+              '@context': 'https://schema.org',
+              '@type': 'Restaurant',
+              name: 'Cardamom Restaurant',
+              description: 'Authentic Indian cuisine and fine dining experience in Hamburg',
+              url: 'https://cardamom-restaurant.com',
+              telephone: '+49-40-123456789',
+              priceRange: '$$',
+              servesCuisine: 'Indian',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Hohe Bleichen 10',
+                addressLocality: 'Hamburg',
+                postalCode: '20354',
+                addressCountry: 'DE',
               },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 53.5511,
-                "longitude": 9.9937
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 53.5511,
+                longitude: 9.9937,
               },
-              "openingHours": [
-                "Mo-Su 11:00-23:00"
+              openingHours: ['Mo-Su 11:00-23:00'],
+              acceptsReservations: true,
+              hasMenu: 'https://cardamom-restaurant.com/menu',
+              image: 'https://cardamom-restaurant.com/og-image.jpg',
+              parentOrganization: {
+                '@type': 'Organization',
+                name: 'Susko',
+                url: 'https://susko.de',
+                description: 'Premium restaurant and hospitality company',
+                founder: {
+                  '@type': 'Person',
+                  name: 'Susko',
+                },
+              },
+              brand: {
+                '@type': 'Brand',
+                name: 'Susko',
+              },
+              sameAs: [
+                'https://www.instagram.com/susko',
+                'https://www.facebook.com/susko',
+                'https://twitter.com/susko',
               ],
-              "acceptsReservations": true,
-              "hasMenu": "https://cardamom-restaurant.com/menu",
-              "image": "https://cardamom-restaurant.com/og-image.jpg",
-              "parentOrganization": {
-                "@type": "Organization",
-                "name": "Susko",
-                "url": "https://susko.de",
-                "description": "Premium restaurant and hospitality company",
-                "founder": {
-                  "@type": "Person",
-                  "name": "Susko"
-                }
-              },
-              "brand": {
-                "@type": "Brand",
-                "name": "Susko"
-              },
-              "sameAs": [
-                "https://www.instagram.com/susko",
-                "https://www.facebook.com/susko",
-                "https://twitter.com/susko"
-              ]
-            })
+            }),
           }}
         />
       </head>

@@ -5,6 +5,7 @@ This document outlines the comprehensive SEO optimization strategy implemented t
 ## Overview
 
 The Susko brand has been strategically integrated into the website's SEO infrastructure to:
+
 - Establish brand authority and ownership
 - Improve search engine rankings for Susko-related queries
 - Create semantic connections between Cardamom Restaurant and Susko company
@@ -15,8 +16,9 @@ The Susko brand has been strategically integrated into the website's SEO infrast
 ### 1. Meta Tags & Metadata Enhancement
 
 #### Global Layout (`app/layout.tsx`)
+
 - **Title**: Added "| Susko" suffix to main title
-- **Description**: Integrated "by Susko" naturally into descriptions
+- **Description**: Integrated " " naturally into descriptions
 - **Keywords**: Added susko-related keywords: `susko, susko restaurant, susko cardamom, susko hamburg`
 - **Authors**: Changed to `{ name: 'Susko', url: 'https://susko.de' }`
 - **Creator**: Set to "Susko"
@@ -27,29 +29,35 @@ The Susko brand has been strategically integrated into the website's SEO infrast
 #### Page-Specific Optimizations
 
 **Catering Page**
-- Title: "Catering Services - Cardamom Hamburg | Professionelles Indisches Catering by Susko"
+
+- Title: "Catering Services - Cardamom Hamburg | Professionelles Indisches Catering "
 - Keywords: Added `susko catering, susko hamburg, susko events`
 - Publisher: "Susko - Cardamom Hamburg"
 
 **Westfield Location**
-- Title: "Cardamom Westfield - Progressive Indian Dining | Hamburg by Susko"
+
+- Title: "Cardamom Westfield - Progressive Indian Dining | Hamburg "
 - Keywords: Added `susko, susko westfield, susko hamburg, susko restaurant`
 - Publisher: "Susko - Cardamom Restaurant Hamburg"
 
 **Westfield Menu**
-- Title: "Speisekarte Westfield - Cardamom Hamburg | Authentische Indische Küche by Susko"
+
+- Title: "Speisekarte Westfield - Cardamom Hamburg | Authentische Indische Küche "
 - Keywords: Added `susko, susko menu, susko westfield, susko hamburg`
 
 **Hohe Bleichen Location**
-- Title: "Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg by Susko"
+
+- Title: "Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg "
 - Keywords: Added `susko, susko hohe bleichen, susko hamburg, susko restaurant`
 
 **Hohe Bleichen Menu**
-- Title: "Speisekarte Hohe Bleichen - Cardamom Hamburg | Authentische Indische Küche by Susko"
+
+- Title: "Speisekarte Hohe Bleichen - Cardamom Hamburg | Authentische Indische Küche "
 - Keywords: Added `susko, susko menu, susko hohe bleichen, susko hamburg`
 
 **Events Page**
-- Title: "Events & Catering - Cardamom Hamburg | Unvergessliche Events by Susko"
+
+- Title: "Events & Catering - Cardamom Hamburg | Unvergessliche Events "
 - Keywords: Added `susko, susko events, susko catering, susko hamburg`
 
 ### 2. Structured Data (JSON-LD)
@@ -86,24 +94,28 @@ Implemented comprehensive schema.org markup in the main layout:
 ### 3. Technical SEO Files
 
 #### Robots.txt (`public/robots.txt`)
+
 - Added Susko company information in comments
 - Included reference to Susko website
 - Proper crawling instructions for all important pages
 
 #### Sitemap.xml (`public/sitemap.xml`)
+
 - XML comments referencing Susko company
-- Image titles and captions include "by Susko" branding
+- Image titles and captions include " " branding
 - Comprehensive URL structure with proper priorities
 
 ### 4. Social Media Integration
 
 #### Twitter/X Optimization
+
 - **Creator**: @susko
 - **Site**: @susko
 - All Twitter card titles include "| Susko" suffix
-- Descriptions naturally incorporate "by Susko"
+- Descriptions naturally incorporate " "
 
 #### OpenGraph Enhancement
+
 - **siteName**: "Susko - Cardamom Restaurant" (or variations)
 - Descriptions updated to include Susko branding
 - Maintains brand consistency across social sharing
@@ -111,21 +123,25 @@ Implemented comprehensive schema.org markup in the main layout:
 ## SEO Benefits
 
 ### 1. Brand Authority
+
 - Establishes Susko as the parent company/brand
 - Creates semantic relationship between restaurant and company
 - Improves brand recognition in search results
 
 ### 2. Keyword Optimization
+
 - Targets Susko-related search queries
 - Improves rankings for "Susko restaurant", "Susko Hamburg", etc.
 - Long-tail keyword optimization with location + brand combinations
 
 ### 3. Structured Data Benefits
+
 - Search engines understand business relationships
 - Enhanced rich snippets potential
 - Better knowledge graph integration
 
 ### 4. Social Media SEO
+
 - Consistent branding across social platforms
 - Improved social media discoverability
 - Enhanced sharing metadata
@@ -133,6 +149,7 @@ Implemented comprehensive schema.org markup in the main layout:
 ## Search Engine Targeting
 
 ### Primary Keywords
+
 - susko
 - susko restaurant
 - susko hamburg
@@ -140,12 +157,14 @@ Implemented comprehensive schema.org markup in the main layout:
 - susko indian restaurant
 
 ### Location-Specific Keywords
+
 - susko westfield
 - susko hohe bleichen
 - susko westfield hamburg
 - susko hohe bleichen hamburg
 
 ### Service-Specific Keywords
+
 - susko catering
 - susko events
 - susko menu
@@ -154,6 +173,7 @@ Implemented comprehensive schema.org markup in the main layout:
 ## Technical Implementation
 
 ### Files Modified
+
 1. `app/layout.tsx` - Global metadata and structured data
 2. `app/(root)/catering/page.tsx` - Catering page metadata
 3. `app/(root)/westfield/page.tsx` - Westfield location metadata
@@ -163,6 +183,7 @@ Implemented comprehensive schema.org markup in the main layout:
 7. `app/(root)/events/page.tsx` - Events page metadata
 
 ### Files Created
+
 1. `public/robots.txt` - Search engine crawling instructions
 2. `public/sitemap.xml` - Comprehensive site structure
 3. `SUSKO_SEO_OPTIMIZATION.md` - This documentation
@@ -170,12 +191,14 @@ Implemented comprehensive schema.org markup in the main layout:
 ## Monitoring & Analytics
 
 ### Recommended Tracking
+
 1. **Google Search Console**: Monitor Susko-related queries
 2. **Google Analytics**: Track organic traffic for Susko keywords
 3. **Brand Monitoring**: Track mentions and brand awareness
 4. **SERP Tracking**: Monitor rankings for target keywords
 
 ### Key Metrics to Watch
+
 - Organic traffic for "Susko" + restaurant-related queries
 - Brand mention increase in search results
 - Social media engagement with Susko-branded content

@@ -7,13 +7,15 @@ A modern, responsive website for Cardamom Restaurant Hamburg featuring authentic
 ## 🏢 About
 
 Cardamom Restaurant offers progressive Indian dining experiences in Hamburg with two locations:
+
 - **Hohe Bleichen 10** - Elegant atmosphere in the heart of Hamburg
 - **Westfield Hamburg-Überseequartier** - Modern dining in HafenCity
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm, yarn, pnpm, or bun
 
 ### Installation
@@ -63,17 +65,17 @@ npm run lint
 
 ### Main Routes
 
-| Route | Description | Features |
-|-------|-------------|----------|
-| `/` | Homepage | Hero banner, locations overview, restaurant showcase, testimonials, FAQ |
-| `/hohe-bleichen` | Hohe Bleichen Location | Location details, opening hours, reservation system |
-| `/westfield` | Westfield Location | Location showcase, hours, contact information |
-| `/hohe-bleichen-menu` | Hohe Bleichen Menu | Interactive menu, PDF download, menu preview |
-| `/westfield-menu` | Westfield Menu | Digital menu, downloadable PDF |
-| `/events` | Events & Private Dining | Event showcase, booking information, gallery |
-| `/catering` | Catering Services | Catering menu, process, service details |
-| `/about-us` | About Us | Restaurant story, philosophy |
-| `/kontakt` | Contact | Contact forms, location details |
+| Route                 | Description             | Features                                                                |
+| --------------------- | ----------------------- | ----------------------------------------------------------------------- |
+| `/`                   | Homepage                | Hero banner, locations overview, restaurant showcase, testimonials, FAQ |
+| `/hohe-bleichen`      | Hohe Bleichen Location  | Location details, opening hours, reservation system                     |
+| `/westfield`          | Westfield Location      | Location showcase, hours, contact information                           |
+| `/hohe-bleichen-menu` | Hohe Bleichen Menu      | Interactive menu, PDF download, menu preview                            |
+| `/westfield-menu`     | Westfield Menu          | Digital menu, downloadable PDF                                          |
+| `/events`             | Events & Private Dining | Event showcase, booking information, gallery                            |
+| `/catering`           | Catering Services       | Catering menu, process, service details                                 |
+| `/about-us`           | About Us                | Restaurant story, philosophy                                            |
+| `/kontakt`            | Contact                 | Contact forms, location details                                         |
 
 ### External Integrations
 
@@ -84,15 +86,17 @@ npm run lint
 ## 🛠 Tech Stack
 
 ### Core Framework
+
 - **Next.js 15.4.6** - React framework with App Router
 - **React 19.1.0** - UI library
 - **TypeScript 5** - Type safety
 - **Tailwind CSS 4** - Utility-first CSS framework
 
 ### UI Components & Styling
+
 - **Radix UI** - Accessible component primitives
   - `@radix-ui/react-accordion`
-  - `@radix-ui/react-dialog` 
+  - `@radix-ui/react-dialog`
   - `@radix-ui/react-dropdown-menu`
 - **Lucide React** - Icon library
 - **Class Variance Authority** - Component variant management
@@ -100,11 +104,13 @@ npm run lint
 - **CLSX** - Conditional class names
 
 ### Animation & Interactions
+
 - **Framer Motion 12.23.12** - Animation library
 - **Lenis 1.3.8** - Smooth scrolling
 - **TW Animate CSS** - Additional Tailwind animations
 
 ### Development Tools
+
 - **ESLint 9** - Code linting
 - **PostCSS** - CSS processing
 - **Turbopack** - Fast bundler (dev mode)
@@ -112,6 +118,7 @@ npm run lint
 ## 🎨 Key Features
 
 ### SEO Optimization
+
 - Comprehensive meta tags and Open Graph data
 - Structured data (JSON-LD) for search engines
 - Optimized robots.txt and sitemap.xml
@@ -119,12 +126,14 @@ npm run lint
 - Social media integration (Twitter Cards, Open Graph)
 
 ### Performance
+
 - Next.js Image Optimization
 - Lazy loading components
 - Optimized fonts and assets
 - Fast refresh with Turbopack
 
 ### User Experience
+
 - Responsive design for all devices
 - Smooth scrolling and animations
 - Interactive menu components
@@ -132,6 +141,7 @@ npm run lint
 - Progressive Web App features
 
 ### Business Features
+
 - **Dual Location Support** - Separate pages and menus for each location
 - **Online Reservations** - Direct integration with booking systems
 - **Digital Menus** - Interactive and downloadable PDF menus
@@ -190,6 +200,7 @@ cardamom/
 ## 🌐 Deployment
 
 The application is optimized for deployment on:
+
 - **Vercel** (recommended)
 - **Netlify**
 - **AWS Amplify**
@@ -204,7 +215,7 @@ The application is optimized for deployment on:
 
 ## 📄 License
 
-This project is proprietary software developed by Susko for Cardamom Restaurant Hamburg.
+This project is proprietary software developed for Cardamom Restaurant Hamburg.
 
 ---
 

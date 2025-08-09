@@ -5,9 +5,9 @@ import OpeningHours from '@/app/(root)/hohe-bleichen/components/OpeningHours';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg by Susko',
+  title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg  ',
   description:
-    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs by Susko. Cardamom Hohe Bleichen verbindet traditionelle Aromen mit moderner Präsentation. Reservieren Sie jetzt!',
+    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  . Cardamom Hohe Bleichen verbindet traditionelle Aromen mit moderner Präsentation. Reservieren Sie jetzt!',
   keywords:
     'Cardamom, Hohe Bleichen, Hamburg, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische indische Gerichte, moderne indische Küche, Restaurant Hamburg Innenstadt, susko, susko hohe bleichen, susko hamburg, susko restaurant',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg by Susko',
+    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg  ',
     description:
-      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs by Susko. Hohe Bleichen 10, 20354 Hamburg. Jetzt Tisch reservieren!',
+      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  . Hohe Bleichen 10, 20354 Hamburg. Jetzt Tisch reservieren!',
     type: 'website',
     siteName: 'Susko - Cardamom Restaurant',
     locale: 'de_DE',
@@ -44,7 +44,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Susko',
-    description: 'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs by Susko.',
+    description:
+      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  .',
     images: ['/home/location.jpg'],
     creator: '@susko',
     site: '@susko',

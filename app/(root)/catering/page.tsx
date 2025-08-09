@@ -6,7 +6,7 @@ import CateringProcess from './components/CateringProcess';
 import CateringServices from './components/CateringServices';
 
 export const metadata: Metadata = {
-  title: 'Catering Services - Cardamom Hamburg | Professionelles Indisches Catering by Susko',
+  title: 'Catering Services - Cardamom Hamburg | Professionelles Indisches Catering  ',
   description:
     'Bringen Sie die authentische indische Küche zu Ihrem Event mit Susko Catering. Unser professionelles Catering-Service bietet maßgeschneiderte Menüs für jeden Anlass - von privaten Feiern bis hin zu geschäftlichen Events.',
   keywords:
@@ -26,8 +26,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Catering Services - Cardamom Hamburg | Professionelles Indisches Catering by Susko',
-    description: 'Bringen Sie die authentische indische Küche zu Ihrem Event mit Susko Catering. Professionelles Catering für alle Anlässe in Hamburg.',
+    title: 'Catering Services - Cardamom Hamburg | Professionelles Indisches Catering  ',
+    description:
+      'Bringen Sie die authentische indische Küche zu Ihrem Event mit Susko Catering. Professionelles Catering für alle Anlässe in Hamburg.',
     type: 'website',
     siteName: 'Susko - Cardamom Hamburg',
     locale: 'de_DE',
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Catering Services - Cardamom Hamburg | Susko',
-    description: 'Professionelles indisches Catering für alle Anlässe in Hamburg by Susko',
+    description: 'Professionelles indisches Catering für alle Anlässe in Hamburg  ',
     images: ['https://cardamom-hamburg.de/catering/catering-hero.jpg'],
     creator: '@susko',
     site: '@susko',
