@@ -1,7 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
+// Declare global grecaptcha
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
 
 interface ContactFormData {
   name: string;
@@ -15,7 +22,75 @@ const ContactSection: React.FC = () => {
     email: '',
     message: '',
   });
-  const [isRecaptchaChecked, setIsRecaptchaChecked] = useState<boolean>(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState<boolean>(false);
+  const recaptchaRef = useRef<HTMLDivElement>(null);
+  const recaptchaWidgetId = useRef<number | null>(null);
+
+  // Load reCAPTCHA script and render widget
+  useEffect(() => {
+    const loadRecaptcha = () => {
+      // Check if script already exists
+      if (document.querySelector('script[src*="recaptcha"]')) {
+        // Script exists, wait for grecaptcha to be ready
+        const checkReady = () => {
+          if (window.grecaptcha && window.grecaptcha.render) {
+            renderRecaptcha();
+          } else {
+            setTimeout(checkReady, 100);
+          }
+        };
+        checkReady();
+        return;
+      }
+
+      // Create and load script
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+
+      // Define global callback
+      (window as any).onRecaptchaLoad = () => {
+        renderRecaptcha();
+      };
+    };
+
+    const renderRecaptcha = () => {
+      if (recaptchaRef.current && !recaptchaWidgetId.current) {
+        try {
+          recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
+            sitekey: '6Ldj6McqAAAAACFJahkqj4lXCj0F_iY8IBsBJgIb', // Replace with your actual site key
+            callback: (token: string) => {
+              setRecaptchaToken(token);
+              console.log('reCAPTCHA verified:', token);
+            },
+            'expired-callback': () => {
+              setRecaptchaToken(null);
+              console.log('reCAPTCHA expired');
+            },
+            'error-callback': () => {
+              setRecaptchaToken(null);
+              console.log('reCAPTCHA error');
+            },
+          });
+          setIsRecaptchaLoaded(true);
+        } catch (error) {
+          console.error('Error rendering reCAPTCHA:', error);
+        }
+      }
+    };
+
+    loadRecaptcha();
+
+    // Cleanup
+    return () => {
+      if ((window as any).onRecaptchaLoad) {
+        delete (window as any).onRecaptchaLoad;
+      }
+    };
+  }, []);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -28,14 +103,16 @@ const ContactSection: React.FC = () => {
     console.log(`${name} field updated:`, value);
   };
 
-  const handleRecaptchaChange = (): void => {
-    setIsRecaptchaChecked(!isRecaptchaChecked);
-    console.log('reCAPTCHA checked:', !isRecaptchaChecked);
+  const resetRecaptcha = () => {
+    if (window.grecaptcha && recaptchaWidgetId.current !== null) {
+      window.grecaptcha.reset(recaptchaWidgetId.current);
+      setRecaptchaToken(null);
+    }
   };
 
-  const handleSubmit = (): void => {
+  const handleSubmit = async (): Promise<void> => {
     console.log('Form submission attempted with data:', formData);
-    console.log('reCAPTCHA status:', isRecaptchaChecked);
+    console.log('reCAPTCHA token:', recaptchaToken);
 
     if (!formData.name || !formData.email || !formData.message) {
       console.log('Form validation failed: Missing required fields');
@@ -43,23 +120,48 @@ const ContactSection: React.FC = () => {
       return;
     }
 
-    if (!isRecaptchaChecked) {
-      console.log('Form validation failed: reCAPTCHA not checked');
+    if (!recaptchaToken) {
+      console.log('Form validation failed: reCAPTCHA not verified');
       alert('Bitte bestätigen Sie das reCAPTCHA.');
       return;
     }
 
-    console.log('Form submitted successfully:', {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-      timestamp: new Date().toISOString(),
-    });
+    try {
+      // Here you would typically send the form data and reCAPTCHA token to your backend
+      // Example API call:
+      /*
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
+      });
 
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    setIsRecaptchaChecked(false);
-    alert('Nachricht erfolgreich gesendet!');
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      */
+
+      console.log('Form submitted successfully:', {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        recaptchaToken,
+        timestamp: new Date().toISOString(),
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+      resetRecaptcha();
+      alert('Nachricht erfolgreich gesendet!');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+    }
   };
 
   return (
@@ -172,33 +274,25 @@ const ContactSection: React.FC = () => {
                 />
               </div>
 
-              {/* reCAPTCHA */}
+              {/* Real reCAPTCHA */}
               <div className="flex items-center justify-start my-6 sm:my-8">
-                <div className="bg-gray-100 p-3 sm:p-4 rounded border border-gray-300 flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto">
-                  <input
-                    type="checkbox"
-                    id="recaptcha"
-                    checked={isRecaptchaChecked}
-                    onChange={handleRecaptchaChange}
-                    className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                  />
-                  <label htmlFor="recaptcha" className="text-gray-800 text-xs sm:text-sm">
-                    I&apos;m not a robot
-                  </label>
-                  <div className="ml-auto">
-                    <div className="text-xs text-gray-500">
-                      <div className="font-bold">reCAPTCHA</div>
-                      <div className="text-xs">Privacy - Terms</div>
-                    </div>
+                <div ref={recaptchaRef} className="g-recaptcha"></div>
+                {!isRecaptchaLoaded && (
+                  <div className="bg-gray-100 p-3 sm:p-4 rounded border border-gray-300 flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gray-300 rounded animate-pulse"></div>
+                    <span className="text-gray-800 text-xs sm:text-sm">Loading reCAPTCHA...</span>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Submit Button */}
               <div>
                 <button
                   onClick={handleSubmit}
-                  className="group relative cursor-pointer overflow-hidden bg-transparent border border-white text-white px-6 sm:px-8 py-3 sm:py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base"
+                  disabled={!recaptchaToken}
+                  className={`group relative cursor-pointer overflow-hidden bg-transparent border border-white text-white px-6 sm:px-8 py-3 sm:py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base ${
+                    !recaptchaToken ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
                 >
                   <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
                     Nachricht Abschicken
