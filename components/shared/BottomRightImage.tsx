@@ -11,7 +11,7 @@ const BottomRightImage: React.FC = () => {
   };
 
   const handleCloseClick = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent the image click event from firing
+    e.stopPropagation();
     setIsVisible(false);
   };
 
