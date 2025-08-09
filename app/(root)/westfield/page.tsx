@@ -7,15 +7,50 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cardamom Westfield - Progressive Indian Dining | Hamburg',
   description:
-    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Westfield Hamburg-Überseequartier. Cardamom Westfield verbindet traditionelle Aromen mit moderner Präsentation.',
+    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Westfield Hamburg-Überseequartier. Cardamom Westfield verbindet traditionelle Aromen mit moderner Präsentation für ein unvergessliches kulinarisches Erlebnis.',
   keywords:
-    'Cardamom, Westfield, Hamburg, Überseequartier, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren',
+    'Cardamom, Westfield, Hamburg, Überseequartier, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische Gewürze, moderne Präsentation, HafenCity, Speisekarte',
+  authors: [{ name: 'Cardamom Restaurant Hamburg' }],
+  publisher: 'Cardamom Restaurant Hamburg',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
-    title: 'Cardamom Westfield - Progressive Indian Dining',
+    title: 'Cardamom Westfield - Progressive Indian Dining | Hamburg',
     description:
-      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Westfield Hamburg-Überseequartier.',
+      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Westfield Hamburg-Überseequartier. Authentische Aromen treffen auf moderne Präsentation.',
     type: 'website',
     locale: 'de_DE',
+    url: 'https://cardamom-hamburg.de/westfield',
+    siteName: 'Cardamom Restaurant Hamburg',
+    images: [
+      {
+        url: '/westfield/hero-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cardamom Westfield Restaurant Interior',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cardamom Westfield - Progressive Indian Dining',
+    description:
+      'Progressive indische Küche im Westfield Hamburg-Überseequartier. Reservieren Sie jetzt!',
+    images: ['/westfield/hero-image.jpg'],
   },
   alternates: {
     canonical: '/westfield',
