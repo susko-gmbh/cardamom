@@ -11,19 +11,14 @@ const Banner = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleLoadedData = () => {
-      setIsLoading(false);
-      // Try to play immediately when data is loaded
-      video.play().catch((error) => {
-        console.error('Video autoplay failed:', error);
-        // Don't set error for autoplay failure, just log it
-      });
+    const handleLoadStart = () => {
+      setIsLoading(true);
     };
 
-    const handleCanPlayThrough = () => {
+    const handleCanPlay = () => {
       setIsLoading(false);
       video.play().catch((error) => {
-        console.error('Video play failed:', error);
+        console.error('Video autoplay failed:', error);
       });
     };
 
@@ -33,24 +28,18 @@ const Banner = () => {
       setIsLoading(false);
     };
 
-    const handleLoadStart = () => {
-      setIsLoading(true);
-    };
-
     // Add event listeners
-    video.addEventListener('loadeddata', handleLoadedData);
-    video.addEventListener('canplaythrough', handleCanPlayThrough);
-    video.addEventListener('error', handleError);
     video.addEventListener('loadstart', handleLoadStart);
+    video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('error', handleError);
 
-    // Force load the video
+    // Start loading the video
     video.load();
 
     return () => {
-      video.removeEventListener('loadeddata', handleLoadedData);
-      video.removeEventListener('canplaythrough', handleCanPlayThrough);
-      video.removeEventListener('error', handleError);
       video.removeEventListener('loadstart', handleLoadStart);
+      video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('error', handleError);
     };
   }, []);
 
@@ -58,7 +47,9 @@ const Banner = () => {
     return (
       <section className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[60dvh] bg-gray-900 flex items-center justify-center">
         <div className="text-center text-white px-4">
-          <p className="text-sm sm:text-base">Video could not be loaded. Please check the file path.</p>
+          <p className="text-sm sm:text-base">
+            Video could not be loaded. Please check the file path.
+          </p>
         </div>
       </section>
     );
@@ -68,7 +59,7 @@ const Banner = () => {
     <section className="relative w-full h-[50vh] sm:h-[60vh] lg:h-full overflow-hidden bg-gray-900">
       {/* Loading indicator */}
       {isLoading && (
-        <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">
+        <div className="absolute inset-0 bg-background flex items-center justify-center z-10">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
@@ -77,11 +68,11 @@ const Banner = () => {
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
-        autoPlay
         muted
         loop
         playsInline
         preload="auto"
+        poster="/home/hero-poster.jpg"
       >
         <source src="/home/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.

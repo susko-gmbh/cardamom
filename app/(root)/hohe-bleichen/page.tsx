@@ -7,18 +7,53 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg',
   description:
-    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs. Cardamom Hohe Bleichen verbindet traditionelle Aromen mit moderner Präsentation.',
+    'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs. Cardamom Hohe Bleichen verbindet traditionelle Aromen mit moderner Präsentation. Reservieren Sie jetzt!',
   keywords:
-    'Cardamom, Hohe Bleichen, Hamburg, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren',
+    'Cardamom, Hohe Bleichen, Hamburg, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische indische Gerichte, moderne indische Küche, Restaurant Hamburg Innenstadt',
+  authors: [{ name: 'Susko' }],
+  creator: 'Susko',
+  publisher: 'Cardamom Restaurant',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining',
+    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Hamburg',
     description:
-      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs.',
+      'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs. Hohe Bleichen 10, 20354 Hamburg. Jetzt Tisch reservieren!',
     type: 'website',
     locale: 'de_DE',
+    url: 'https://cardamom-hamburg.de/hohe-bleichen',
+    siteName: 'Cardamom Restaurant Hamburg',
+    images: [
+      {
+        url: '/home/location.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Cardamom Restaurant Hohe Bleichen Hamburg - Elegante indische Küche',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining',
+    description: 'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs.',
+    images: ['/home/location.jpg'],
   },
   alternates: {
     canonical: '/hohe-bleichen',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
   },
 };
 
