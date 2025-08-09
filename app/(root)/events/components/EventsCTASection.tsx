@@ -2,32 +2,32 @@ import Link from 'next/link';
 
 export default function EventsCTASection() {
   return (
-    <section className="min-h-96 relative flex items-center justify-center">
+    <section className="min-h-80 sm:min-h-96 relative flex items-center justify-center">
       {/* Fixed Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/Cardamom05-12-23_10.avif')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/home/westfield03.jpg')`,
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-4 sm:px-6 py-8 sm:py-12">
         {/* Header Text */}
-        <div className="mb-12">
-          <p className="text-white/80 text-lg font-light italic mb-4">Events & Catering</p>
-          <h1 className="text-white text-5xl md:text-6xl font-light leading-tight">
+        <div className="mb-8 sm:mb-12">
+          <p className="text-white/80 text-base sm:text-lg font-light italic mb-3 sm:mb-4">Events & Catering</p>
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight px-2">
             Bereit für Ihr
             <br />
             perfektes Event?
           </h1>
         </div>
-          
+
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
           <Link
             href="tel:+494080080418"
-            className="group relative overflow-hidden px-8 py-4 bg-white hover:bg-primary text-black font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2"
+            className="group relative overflow-hidden px-6 py-3 sm:px-8 sm:py-4 bg-white hover:bg-primary text-black font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2"
           >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Jetzt anrufen
@@ -38,7 +38,7 @@ export default function EventsCTASection() {
 
           <Link
             href="mailto:kontakt@cardamom-hamburg.de"
-            className="group relative overflow-hidden px-8 py-4 bg-transparent hover:bg-white/10 text-white font-medium text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2"
+            className="group relative overflow-hidden px-6 py-3 sm:px-8 sm:py-4 bg-transparent hover:bg-white/10 text-white font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2"
           >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Email senden

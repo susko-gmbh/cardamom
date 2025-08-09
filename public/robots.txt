@@ -1,0 +1,31 @@
+# Robots.txt for Cardamom Restaurant by Susko
+# https://susko.de
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages for SEO
+Allow: /
+Allow: /westfield
+Allow: /hohe-bleichen
+Allow: /westfield-menu
+Allow: /hohe-bleichen-menu
+Allow: /events
+Allow: /catering
+
+# Sitemap location
+Sitemap: https://cardamom-restaurant.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Susko company information for search engines
+# Company: Susko
+# Website: https://susko.de
+# Restaurant Brand: Cardamom Hamburg

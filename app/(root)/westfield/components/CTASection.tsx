@@ -7,14 +7,14 @@ const CTASection = () => {
     <section className="min-h-96 relative flex items-center justify-center">
       {/* Fixed Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed "
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/home/westfield03.jpg')`,
         }}
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 text-center px-6 py-8">
         {/* Header Text */}
         <div className="mb-12">
           <p className="text-white/80 text-lg font-light italic mb-4">Reservierung</p>

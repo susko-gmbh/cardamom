@@ -10,18 +10,18 @@ const CTASection = () => {
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center py-32">
+        <div className="flex items-center justify-center py-20 sm:py-28 lg:py-32">
           <div className="text-center max-w-4xl">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
               Besuchen Sie uns im Westfield
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground max-w-3xl mx-auto mb-6 sm:mb-8">
               Erleben Sie authentische indische Küche in moderner Atmosphäre. Reservieren Sie noch heute Ihren Tisch oder laden Sie unsere komplette Speisekarte herunter.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="https://reservation.dish.co/landingPage/hydra-00847480-0346-11f0-bea1-b9a5dc15ca0b"
-                className="group relative overflow-hidden bg-primary border border-primary text-white px-8 py-3 font-light text-lg capitalize hover:bg-primary/90 transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative overflow-hidden bg-primary border border-primary text-white px-6 sm:px-8 py-3 font-light text-base sm:text-lg capitalize hover:bg-primary/90 transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
                   Jetzt reservieren
@@ -32,7 +32,7 @@ const CTASection = () => {
               <Link
                 href="/Speisekarte Westfield.pdf"
                 target="_blank"
-                className="group relative overflow-hidden bg-transparent border border-primary text-primary px-8 py-3 font-light text-lg capitalize hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer"
+                className="group relative overflow-hidden bg-transparent border border-primary text-primary px-6 sm:px-8 py-3 font-light text-base sm:text-lg capitalize hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
                   Speisekarte herunterladen

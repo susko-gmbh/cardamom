@@ -25,12 +25,12 @@ const Location = () => {
   ];
 
   return (
-    <section className="bg-background py-16 lg:py-32">
+    <section className="bg-background py-8 sm:py-16 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center  pb-12 md:pb-32">
-          <h2 className="miniver-regular text-primary  md:text-lg mb-4">Unsere Standorte</h2>
-          <h1 className="text-foreground text-4xl md:text-5xl lg:text-6xl font-semibold">
+        <div className="text-center pb-8 sm:pb-12 md:pb-32">
+          <h2 className="miniver-regular text-primary text-sm sm:text-base md:text-lg mb-2 sm:mb-4">Unsere Standorte</h2>
+          <h1 className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight">
             Zwei Locations, Ein Erlebnis
           </h1>
         </div>
@@ -40,22 +40,22 @@ const Location = () => {
           {locations.map((location) => (
             <div key={location.id} className="group relative">
               {/* Location Number */}
-              <div className="flex items-center justify-between px-8 py-10">
+              <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10">
                 <div className="">
-                  <h1 className="text-5xl text-white">{location.title}</h1>
-                  <h1 className="uppercase tracking-[0.3em] font-light ps-1.5 text-white pt-2">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl text-white">{location.title}</h1>
+                  <h1 className="uppercase tracking-[0.2em] sm:tracking-[0.3em] font-light ps-1 sm:ps-1.5 text-white pt-1 sm:pt-2 text-sm sm:text-base">
                     {location.subtitle}
                   </h1>
                 </div>
-                <div className=" ">
-                  <span className="text-6xl md:text-7xl lg:text-6xl font-light text-muted-foreground/30">
+                <div className="">
+                  <span className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-light text-muted-foreground/30">
                     {location.id}
                   </span>
                 </div>
               </div>
 
               {/* Location Card */}
-              <div className="relative bg-card rounded-none h-[26rem] overflow-hidden shadow-xl">
+              <div className="relative bg-card rounded-none h-[20rem] sm:h-[24rem] lg:h-[26rem] overflow-hidden shadow-xl">
                 {/* Image Container - Fixed Height */}
                 <div className="relative h-full w-full overflow-hidden">
                   <Image
@@ -63,29 +63,32 @@ const Location = () => {
                     src={location.image}
                     alt={`${location.title} ${location.subtitle}`}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={85}
                   />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8 text-white">
-                    <p className="text-sm lg:text-base text-gray-200 mb-4 leading-relaxed">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 text-white">
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-200 mb-3 sm:mb-4 leading-relaxed">
                       {location.description}
                     </p>
 
-                    <div className="flex items-center text-sm lg:text-base text-gray-300">
-                      <MapPin className="h-4 w-4 mr-2 text-primary" />
-                      <span>{location.address}</span>
+                    <div className="flex items-center text-xs sm:text-sm lg:text-base text-gray-300">
+                      <MapPin className="h-3 w-3 sm:h-4 sm:w-4 mr-2 text-primary flex-shrink-0" />
+                      <span className="leading-tight">{location.address}</span>
                     </div>
                   </div>
                 </div>
               </div>
               {/* Button */}
-              <div className="p-6 lg:p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 <Link
                   href={location.href}
-                  className="group relative overflow-hidden inline-flex items-center justify-center w- border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-8 py-3 text-sm lg:text-base font-medium tracking-wider uppercase"
+                  className="group relative overflow-hidden inline-flex items-center justify-center w-full sm:w-auto border border-foreground text-foreground hover:bg-foreground hover:text-background transition-all duration-300 px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm lg:text-base font-medium tracking-wider uppercase"
                 >
                   <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
                     Mehr Erfahren
