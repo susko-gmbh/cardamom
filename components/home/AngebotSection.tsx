@@ -1,4 +1,4 @@
-import LazyImage from '@/components/ui/lazy-image';
+import Image from 'next/image';
 import React from 'react';
 
 // TypeScript interfaces
@@ -119,14 +119,14 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
 
         {/* Right Side - Full Image */}
         <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-full">
-          <LazyImage
-            src="/home/offer.jpg"
+          <Image
+            src="/home/offer.webp"
             alt="Restaurant dishes"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={85}
-            aspectRatio="landscape"
+            priority
           />
         </div>
       </div>
@@ -136,7 +136,7 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
         <div className="container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center">
           {/* Header Section */}
           <div className="mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
-            <p className="text-[#c6a87d] text-xs sm:text-sm font-light tracking-wide mb-2 sm:mb-4 miniver-regular">
+            <p className="text-[#c6a87d] text-xs sm:text-2xl  font-light tracking-wide mb-2 sm:mb-4 miniver-regular">
               Angebot
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight max-w-2xl mx-auto lg:mx-0">

@@ -1,5 +1,5 @@
-# Robots.txt for Cardamom Restaurant by Susko
-# https://susko.de
+# Robots.txt for Cardamom Restaurant
+# https://www.cardamom-hamburg.de
 
 User-agent: *
 Allow: /
@@ -20,12 +20,11 @@ Allow: /events
 Allow: /catering
 
 # Sitemap location
-Sitemap: https://cardamom-restaurant.com/sitemap.xml
+Sitemap: https://www.cardamom-hamburg.de/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Susko company information for search engines
-# Company: Susko
-# Website: https://susko.de
-# Restaurant Brand: Cardamom Hamburg
+# Restaurant information for search engines
+# Restaurant: Cardamom Hamburg
+# Website: https://www.cardamom-hamburg.de

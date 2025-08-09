@@ -39,7 +39,7 @@ const ScrollToTop = () => {
         >
           <button
             onClick={scrollToTop}
-            className="bg-primary cursor-pointer hover:bg-amber-700 text-white p-3 transition-colors duration-300 rounded-none shadow-lg"
+            className="bg-primary cursor-pointer hover:bg-primary text-white p-3 transition-colors duration-300 rounded-none shadow-lg"
             aria-label="Scroll to top"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

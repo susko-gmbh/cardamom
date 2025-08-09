@@ -16,29 +16,29 @@ const miniver = Miniver({
 });
 
 export const metadata: Metadata = {
-  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining ',
+  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
   description:
-    'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
+    'Experience the finest Indian cuisine at Cardamom Restaurant. Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
   keywords:
-    'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, susko, susko restaurant, susko cardamom, susko hamburg',
-  authors: [{ name: 'Susko', url: 'https://susko.de' }],
-  creator: 'Susko',
-  publisher: ' Cardamom Restaurant',
+    'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, restaurant, cardamom, hamburg',
+  authors: [{ name: 'Cardamom Restaurant', url: 'https://www.cardamom-hamburg.de' }],
+  creator: 'Cardamom Restaurant',
+  publisher: 'Cardamom Restaurant',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://cardamom-restaurant.com'),
+  metadataBase: new URL('https://www.cardamom-hamburg.de'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining ',
+    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
-    url: 'https://cardamom-restaurant.com',
-    siteName: 'Cardamom Restaurant  ',
+      'Experience the finest Indian cuisine at Cardamom Restaurant. Authentic flavors, fresh ingredients, and exceptional service.',
+    url: 'https://www.cardamom-hamburg.de',
+    siteName: 'Cardamom Restaurant',
     images: [
       {
         url: '/og-image.jpg',
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
+      'Experience the finest Indian cuisine at Cardamom Restaurant. Authentic flavors, fresh ingredients, and exceptional service.',
     images: ['/og-image.jpg'],
-    creator: '@susko',
-    site: '@susko',
+    creator: '@cardamom_hamburg',
+    site: '@cardamom_hamburg',
   },
   robots: {
     index: true,
@@ -103,7 +103,7 @@ export default function RootLayout({
               '@type': 'Restaurant',
               name: 'Cardamom Restaurant',
               description: 'Authentic Indian cuisine and fine dining experience in Hamburg',
-              url: 'https://cardamom-restaurant.com',
+              url: 'https://www.cardamom-hamburg.de',
               telephone: '+49-40-123456789',
               priceRange: '$$',
               servesCuisine: 'Indian',
@@ -121,8 +121,8 @@ export default function RootLayout({
               },
               openingHours: ['Mo-Su 11:00-23:00'],
               acceptsReservations: true,
-              hasMenu: 'https://cardamom-restaurant.com/menu',
-              image: 'https://cardamom-restaurant.com/og-image.jpg',
+              hasMenu: 'https://www.cardamom-hamburg.de/menu',
+    image: 'https://www.cardamom-hamburg.de/og-image.jpg',
             }),
           }}
         />
