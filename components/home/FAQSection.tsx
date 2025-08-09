@@ -124,6 +124,9 @@ const FAQSection: React.FC = () => {
                   src={currentItem.leftImages[0]}
                   alt="Left image 1"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 20vw"
+                  quality={80}
                 />
               </motion.div>
             </AnimatePresence>
@@ -143,6 +146,9 @@ const FAQSection: React.FC = () => {
                   src={currentItem.leftImages[1]}
                   alt="Left image 2"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 20vw"
+                  quality={80}
                 />
               </motion.div>
             </AnimatePresence>
@@ -206,6 +212,9 @@ const FAQSection: React.FC = () => {
                   src={currentItem.rightImages[0]}
                   alt="Right image"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 20vw"
+                  quality={80}
                 />
               </motion.div>
             </AnimatePresence>

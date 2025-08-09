@@ -83,6 +83,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Preload critical images */}
+        <link rel="preload" as="image" href="/home/westfield.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/home/westfield.jpg" type="image/jpeg" />
+        <link rel="preload" as="image" href="/logo.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/logo.png" type="image/png" />
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      </head>
       <body className={` ${josefinSans.variable} ${miniver.variable} antialiased`}>{children}</body>
     </html>
   );

@@ -10,7 +10,15 @@ const MenuPreview = () => {
           {/* Image Section */}
           <div className="relative">
             <div className="relative h-80 sm:h-96 lg:h-[450px] overflow-hidden shadow-xl ">
-              <Image src="/home/location02.jpg" alt="Cardamom Menu" fill className="object-cover" />
+              <Image 
+                src="/home/location02.jpg" 
+                alt="Cardamom Menu" 
+                fill 
+                className="object-cover" 
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
+              />
             </div>
           </div>
 

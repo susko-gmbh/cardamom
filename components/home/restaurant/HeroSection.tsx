@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import LazyImage from '@/components/ui/lazy-image';
 
 // Hero Image Grid Component
 const HeroImageGrid = () => {
@@ -7,32 +7,42 @@ const HeroImageGrid = () => {
       <div className="grid grid-cols-2 gap-2 sm:gap-4">
         <div className="space-y-2 sm:space-y-4">
           <div className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden rounded-sm">
-            <Image
+            <LazyImage
               width={600}
               height={500}
               src="/home/westfield.jpg"
               alt="Restaurant interior"
               className="w-full h-full object-cover opacity-90"
+              priority
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+              quality={90}
+              aspectRatio="aspect-[4/3]"
             />
           </div>
           <div className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden rounded-sm">
-            <Image
+            <LazyImage
               width={600}
               height={500}
               src="/home/westfield02.jpg"
               alt="Chef cooking"
               className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+              quality={85}
+              aspectRatio="square"
             />
           </div>
         </div>
         <div className="pt-4 sm:pt-8">
           <div className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden rounded-sm">
-            <Image
+            <LazyImage
               width={600}
               height={500}
               src="/home/westfield03.jpg"
               alt="Food presentation"
               className="w-full h-full object-cover"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+              quality={85}
+              aspectRatio="aspect-[3/4]"
             />
           </div>
         </div>
