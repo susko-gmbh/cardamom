@@ -6,7 +6,7 @@ const HeroImageGrid = () => {
     <div className="relative">
       <div className="grid grid-cols-2 gap-2 sm:gap-4">
         <div className="space-y-2 sm:space-y-4">
-          <div className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden rounded-sm">
+          <div className="aspect-[4/3] bg-card overflow-hidden">
             <LazyImage
               width={600}
               height={500}
@@ -19,7 +19,7 @@ const HeroImageGrid = () => {
               aspectRatio="aspect-[4/3]"
             />
           </div>
-          <div className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden rounded-sm">
+          <div className="aspect-square bg-card from-orange-600 to-red-600 overflow-hidden">
             <LazyImage
               width={600}
               height={500}
@@ -33,7 +33,7 @@ const HeroImageGrid = () => {
           </div>
         </div>
         <div className="pt-4 sm:pt-8">
-          <div className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden rounded-sm">
+          <div className="aspect-[3/4] bg-card from-green-700 to-teal-600 overflow-hidden">
             <LazyImage
               width={600}
               height={500}

@@ -5,13 +5,14 @@ import MenuPDF from './components/MenuPDF';
 import MenuPreview from './components/MenuPreview';
 
 export const metadata: Metadata = {
-  title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg | Authentische Indische Küche',
+  title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg | Authentische Indische Küche by Susko',
   description:
-    'Entdecken Sie unsere authentische indische Speisekarte im Cardamom Hohe Bleichen. Von traditionellen Curries bis hin zu zeitgemäßen Kreationen - jedes Gericht erzählt eine Geschichte von Aromen und Gewürzen.',
+    'Entdecken Sie unsere authentische indische Speisekarte im Cardamom Hohe Bleichen by Susko. Von traditionellen Curries bis hin zu zeitgemäßen Kreationen - jedes Gericht erzählt eine Geschichte von Aromen und Gewürzen.',
   keywords:
-    'Cardamom, Speisekarte, Hohe Bleichen, Hamburg, indisches Restaurant, authentische indische Küche, Curry, Tandoori, Gewürze, Menu',
-  authors: [{ name: 'Cardamom Hamburg', url: 'https://cardamom-hamburg.de' }],
-  publisher: 'Cardamom Hamburg - developed by susko',
+    'Cardamom, Speisekarte, Hohe Bleichen, Hamburg, indisches Restaurant, authentische indische Küche, Curry, Tandoori, Gewürze, Menu, susko, susko menu, susko hohe bleichen, susko hamburg',
+  authors: [{ name: 'Susko', url: 'https://susko.de' }],
+  creator: 'Susko',
+  publisher: 'Susko - Cardamom Hamburg',
   robots: {
     index: true,
     follow: true,
@@ -29,13 +30,13 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   openGraph: {
-    title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg',
+    title: 'Speisekarte Hohe Bleichen - Cardamom Hamburg by Susko',
     description:
-      'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen.',
+      'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen by Susko.',
     type: 'website',
     locale: 'de_DE',
+    siteName: 'Susko - Cardamom Hamburg',
     url: 'https://cardamom-hamburg.de/hohe-bleichen-menu',
-    siteName: 'Cardamom Hamburg',
     images: [
       {
         url: 'https://cardamom-hamburg.de/hohe-bleichen/menu-preview.jpg',
