@@ -16,14 +16,14 @@ const miniver = Miniver({
 });
 
 export const metadata: Metadata = {
-  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining ',
   description:
     'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
   keywords:
     'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, susko, susko restaurant, susko cardamom, susko hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Restaurant',
+  publisher: ' Cardamom Restaurant',
   formatDetection: {
     email: false,
     address: false,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining ',
     description:
       'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
     url: 'https://cardamom-restaurant.com',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
     description:
       'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service.',
     images: ['/og-image.jpg'],
@@ -123,25 +123,6 @@ export default function RootLayout({
               acceptsReservations: true,
               hasMenu: 'https://cardamom-restaurant.com/menu',
               image: 'https://cardamom-restaurant.com/og-image.jpg',
-              parentOrganization: {
-                '@type': 'Organization',
-                name: 'Susko',
-                url: 'https://susko.de',
-                description: 'Premium restaurant and hospitality company',
-                founder: {
-                  '@type': 'Person',
-                  name: 'Susko',
-                },
-              },
-              brand: {
-                '@type': 'Brand',
-                name: 'Susko',
-              },
-              sameAs: [
-                'https://www.instagram.com/susko',
-                'https://www.facebook.com/susko',
-                'https://twitter.com/susko',
-              ],
             }),
           }}
         />

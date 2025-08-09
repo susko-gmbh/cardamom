@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Cardamom, Speisekarte, Westfield, Hamburg, Überseequartier, indisches Restaurant, authentische indische Küche, Curry, Tandoori, Gewürze, Menu, susko, susko menu, susko westfield, susko hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Hamburg',
+  publisher: ' Cardamom Hamburg',
   robots: {
     index: true,
     follow: true,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen im Westfield Hamburg-Überseequartier  .',
     type: 'website',
     locale: 'de_DE',
-    siteName: 'Susko - Cardamom Hamburg',
+    siteName: ' Cardamom Hamburg',
     url: 'https://cardamom-hamburg.de/westfield-menu',
     images: [
       {

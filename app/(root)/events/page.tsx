@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   description:
     'Erleben Sie außergewöhnliche Events und Catering-Services mit unserer authentischen indischen Küche  . Von privaten Feiern bis hin zu geschäftlichen Events - perfekt für Hochzeiten, Geburtstage und Business-Events in Hamburg.',
   keywords:
-    'Cardamom, Events, Catering, Hamburg, indisches Restaurant, private Events, Business Events, Hochzeiten, Geburtstage, Geschäftsveranstaltungen, Event-Location, indische Küche, Firmenveranstaltungen, Privatfeiern, susko, susko events, susko catering, susko hamburg',
+    'Cardamom, Events, Catering, Hamburg, indisches Restaurant, private Events, Business Events, Hochzeiten, Geburtstage, Geschäftsveranstaltungen, Event-Location, indische Küche, Firmenveranstaltungen, Privatfeiern, ,  events,  catering,  hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Hamburg',
+  publisher: ' Cardamom Hamburg',
   robots: {
     index: true,
     follow: true,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Events & Catering - Cardamom Hamburg | Unvergessliche Events  ',
-    siteName: 'Susko - Cardamom Hamburg',
+    siteName: ' Cardamom Hamburg',
     description:
       'Erleben Sie außergewöhnliche Events und Catering-Services mit unserer authentischen indischen Küche  . Von privaten Feiern bis hin zu geschäftlichen Events.',
     type: 'website',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Events & Catering - Cardamom Hamburg | Susko',
+    title: 'Events & Catering - Cardamom Hamburg',
     description:
       'Erleben Sie außergewöhnliche Events und Catering-Services mit unserer authentischen indischen Küche  .',
     images: ['/events/events-hero.jpg'],

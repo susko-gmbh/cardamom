@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   description:
     'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  . Cardamom Hohe Bleichen verbindet traditionelle Aromen mit moderner Präsentation. Reservieren Sie jetzt!',
   keywords:
-    'Cardamom, Hohe Bleichen, Hamburg, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische indische Gerichte, moderne indische Küche, Restaurant Hamburg Innenstadt, susko, susko hohe bleichen, susko hamburg, susko restaurant',
+    'Cardamom, Hohe Bleichen, Hamburg, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische indische Gerichte, moderne indische Küche, Restaurant Hamburg Innenstadt, ,  hohe bleichen,  hamburg,  restaurant',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Restaurant',
+  publisher: ' Cardamom Restaurant',
   robots: {
     index: true,
     follow: true,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description:
       'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  . Hohe Bleichen 10, 20354 Hamburg. Jetzt Tisch reservieren!',
     type: 'website',
-    siteName: 'Susko - Cardamom Restaurant',
+    siteName: 'Cardamom Restaurant',
     locale: 'de_DE',
     url: 'https://cardamom-hamburg.de/hohe-bleichen',
     images: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining | Susko',
+    title: 'Cardamom Hohe Bleichen - Progressive Indian Dining',
     description:
       'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Herzen Hamburgs  .',
     images: ['/home/location.jpg'],

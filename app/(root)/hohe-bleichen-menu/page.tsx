@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Cardamom, Speisekarte, Hohe Bleichen, Hamburg, indisches Restaurant, authentische indische Küche, Curry, Tandoori, Gewürze, Menu, susko, susko menu, susko hohe bleichen, susko hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Hamburg',
+  publisher: 'Cardamom Hamburg',
   robots: {
     index: true,
     follow: true,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       'Entdecken Sie unsere authentische indische Speisekarte mit traditionellen Curries und zeitgemäßen Kreationen  .',
     type: 'website',
     locale: 'de_DE',
-    siteName: 'Susko - Cardamom Hamburg',
+    siteName: ' Cardamom Hamburg',
     url: 'https://cardamom-hamburg.de/hohe-bleichen-menu',
     images: [
       {

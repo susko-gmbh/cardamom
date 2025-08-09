@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'Cardamom, Westfield, Hamburg, Überseequartier, indisches Restaurant, progressive indische Küche, elegante Atmosphäre, Tisch reservieren, authentische Gewürze, moderne Präsentation, HafenCity, Speisekarte, susko, susko westfield, susko hamburg, susko restaurant',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
   creator: 'Susko',
-  publisher: 'Susko - Cardamom Restaurant Hamburg',
+  publisher: ' Cardamom Restaurant Hamburg',
   robots: {
     index: true,
     follow: true,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Cardamom Westfield - Progressive Indian Dining | Hamburg  ',
-    siteName: 'Susko - Cardamom Restaurant',
+    siteName: ' Cardamom Restaurant',
     description:
       'Erleben Sie progressive indische Küche in eleganter Atmosphäre im Westfield Hamburg-Überseequartier  . Authentische Aromen treffen auf moderne Präsentation.',
     type: 'website',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cardamom Westfield - Progressive Indian Dining | Susko',
+    title: 'Cardamom Westfield - Progressive Indian Dining',
     description:
       'Progressive indische Küche im Westfield Hamburg-Überseequartier  . Reservieren Sie jetzt!',
     images: ['/westfield/hero-image.jpg'],
