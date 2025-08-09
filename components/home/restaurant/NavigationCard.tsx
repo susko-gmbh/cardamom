@@ -13,7 +13,7 @@ const NavigationCard = ({
 }) => {
   return (
     <div className="group cursor-pointer border pb-4">
-      <div className={`aspect-square bg-gradient-to-br ${gradientColors} overflow-hidden mb-4`}>
+      <div className={`aspect-square bg- overflow-hidden mb-4`}>
         <Image
           width={600}
           height={500}

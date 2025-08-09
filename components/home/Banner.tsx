@@ -60,7 +60,7 @@ const Banner = () => {
       {/* Loading indicator */}
       {isLoading && (
         <div className="absolute inset-0 bg-background flex items-center justify-center z-10">
-          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-2 border-primary/20 border-t-primary"></div>
         </div>
       )}
 

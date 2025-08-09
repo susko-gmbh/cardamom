@@ -116,7 +116,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden "
+                className="aspect-[4/3] bg-card overflow-hidden "
               >
                 <Image
                   width={600}
