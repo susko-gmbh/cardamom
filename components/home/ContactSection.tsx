@@ -1,12 +1,26 @@
 'use client';
-
+// @typescript-eslint/no-explicit-any
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
 // Declare global grecaptcha
+interface GreCaptcha {
+  render?: (
+    container: HTMLElement,
+    parameters: {
+      sitekey: string;
+      callback: (token: string) => void;
+      'expired-callback': () => void;
+      'error-callback': () => void;
+    },
+  ) => number;
+  reset?: (widgetId: number) => void;
+}
+
 declare global {
   interface Window {
-    grecaptcha: any;
+    grecaptcha?: GreCaptcha;
+    onRecaptchaLoad?: () => void;
   }
 }
 
@@ -52,13 +66,13 @@ const ContactSection: React.FC = () => {
       document.head.appendChild(script);
 
       // Define global callback
-      (window as any).onRecaptchaLoad = () => {
+      window.onRecaptchaLoad = () => {
         renderRecaptcha();
       };
     };
 
     const renderRecaptcha = () => {
-      if (recaptchaRef.current && !recaptchaWidgetId.current) {
+      if (recaptchaRef.current && !recaptchaWidgetId.current && window.grecaptcha?.render) {
         try {
           recaptchaWidgetId.current = window.grecaptcha.render(recaptchaRef.current, {
             sitekey: '6Ldj6McqAAAAACFJahkqj4lXCj0F_iY8IBsBJgIb', // Replace with your actual site key
@@ -86,8 +100,8 @@ const ContactSection: React.FC = () => {
 
     // Cleanup
     return () => {
-      if ((window as any).onRecaptchaLoad) {
-        delete (window as any).onRecaptchaLoad;
+      if (window.onRecaptchaLoad) {
+        delete window.onRecaptchaLoad;
       }
     };
   }, []);
@@ -104,7 +118,7 @@ const ContactSection: React.FC = () => {
   };
 
   const resetRecaptcha = () => {
-    if (window.grecaptcha && recaptchaWidgetId.current !== null) {
+    if (window.grecaptcha?.reset && recaptchaWidgetId.current !== null) {
       window.grecaptcha.reset(recaptchaWidgetId.current);
       setRecaptchaToken(null);
     }

@@ -4,12 +4,10 @@ const NavigationCard = ({
   title,
   imageUrl,
   imageAlt,
-  gradientColors,
 }: {
   title: string;
   imageAlt: string;
   imageUrl: string;
-  gradientColors: string;
 }) => {
   return (
     <div className="group cursor-pointer border pb-4">
