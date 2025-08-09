@@ -9,8 +9,9 @@ interface HeaderTopProps {
 const HeaderTop = ({ isSticky }: HeaderTopProps) => {
   return (
     <div
+      data-header-top
       className={`bg-background border-b border-border transition-all duration-300 ${
-        isSticky ? 'opacity-0 -translate-y-full h-0' : 'opacity-100 translate-y-0'
+        isSticky ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

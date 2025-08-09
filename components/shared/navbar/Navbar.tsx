@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 import Logo from '../Logo';
@@ -13,8 +14,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      setIsSticky(offset > 80);
+      // Use scroll position instead of element bounds for more reliable detection
+      const scrollY = window.scrollY;
+      // Assume header top height is around 60px, adjust navbar stickiness accordingly
+      setIsSticky(scrollY > 46);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -27,10 +30,19 @@ const Navbar = () => {
       <HeaderTop isSticky={isSticky} />
 
       {/* Main Navigation */}
-      <nav
-        className={`bg-card border-b border-border transition-all duration-300 z-50 ${
-          isSticky ? 'fixed top-0 left-0 right-0 shadow-xl' : 'relative'
+      <motion.nav
+        className={`bg-card border-b border-border z-50 ${
+          isSticky ? 'fixed top-0 left-0 right-0' : 'relative'
         }`}
+        animate={{
+          boxShadow: isSticky
+            ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+            : '0 0 0 0 rgba(0, 0, 0, 0)',
+        }}
+        transition={{
+          duration: 0.3,
+          ease: [0.4, 0, 0.2, 1],
+        }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center ">
@@ -49,10 +61,10 @@ const Navbar = () => {
             <MobileMenu />
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Spacer for sticky navbar */}
-      {isSticky && <div className="h-[73px]"></div>}
+      {isSticky && <div className="h-[73px]" />}
     </>
   );
 };
