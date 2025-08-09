@@ -63,10 +63,10 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center p-8">
-      <div className="container mx-auto w-full grid lg:grid-cols-2 items-center border border-primary/25">
+    <section className="min-h-screen bg-black flex items-center justify-center p-4 sm:p-6 lg:p-8">
+      <div className="container mx-auto w-full grid lg:grid-cols-2 items-stretch border border-primary/25">
         {/* Left Side - Image with Hexagonal Pattern */}
-        <div className="relative border-e h-full">
+        <div className="relative lg:border-e h-64 sm:h-80 lg:h-full order-2 lg:order-1">
           {/* Hexagonal Pattern Overlay */}
           <div className="absolute -left-16 top-6 w-80 h-96 opacity-20">
             <svg viewBox="0 0 200 240" className="w-full h-full">
@@ -102,8 +102,8 @@ const ContactSection: React.FC = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="relative">
-          <div className="absolute -right-16 bottom-6 w-80 h-96 opacity-20 -z-10 pointer-events-none">
+        <div className="relative order-1 lg:order-2">
+          <div className="absolute -right-16 bottom-6 w-80 h-96 opacity-20 -z-10 pointer-events-none hidden lg:block">
             <svg viewBox="0 0 200 240" className="w-full h-full rotate-180">
               {Array.from({ length: 8 }, (_, row) =>
                 Array.from({ length: 6 }, (_, col) => {
@@ -123,21 +123,21 @@ const ContactSection: React.FC = () => {
               ).flat()}
             </svg>
           </div>
-          <div className="relative z-10 text-white border-s border-primary/25 bg-background p-10">
+          <div className="relative z-10 text-white lg:border-s border-primary/25 bg-background p-6 sm:p-8 lg:p-10">
             {/* Header */}
-            <div className="mb-12">
-              <p className="text-primary text-2xl font-light italic mb-2 miniver-regular">
+            <div className="mb-8 sm:mb-10 lg:mb-12">
+              <p className="text-primary text-lg sm:text-xl lg:text-2xl font-light italic mb-2 miniver-regular">
                 Kontakt
               </p>
-              <h2 className="text-5xl md:text-6xl font-light leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
                 Kontaktieren Sie uns
               </h2>
             </div>
 
             {/* Contact Form */}
-            <div className="space-y-4">
+            <div className="space-y-4 sm:space-y-6">
               {/* Name and Email Row */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <input
                     type="text"
@@ -145,7 +145,7 @@ const ContactSection: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Name"
-                    className="w-full bg-transparent  border border-gray-600  px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-pritext-primary transition-colors duration-300"
+                    className="w-full bg-transparent border border-gray-600 px-3 sm:px-4 py-3 sm:py-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors duration-300 text-sm sm:text-base"
                   />
                 </div>
                 <div>
@@ -155,7 +155,7 @@ const ContactSection: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Email"
-                    className="w-full bg-transparent border border-gray-600 px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-pritext-primary transition-colors duration-300"
+                    className="w-full bg-transparent border border-gray-600 px-3 sm:px-4 py-3 sm:py-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors duration-300 text-sm sm:text-base"
                   />
                 </div>
               </div>
@@ -167,22 +167,22 @@ const ContactSection: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Nachricht"
-                  rows={6}
-                  className="w-full bg-transparent border border-gray-600 px-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-pritext-primary transition-colors duration-300 resize-none"
+                  rows={5}
+                  className="w-full bg-transparent border border-gray-600 px-3 sm:px-4 py-3 sm:py-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors duration-300 resize-none text-sm sm:text-base"
                 />
               </div>
 
               {/* reCAPTCHA */}
-              <div className="flex items-center justify-start my-8">
-                <div className="bg-gray-100 p-4 rounded border border-gray-300 flex items-center space-x-3">
+              <div className="flex items-center justify-start my-6 sm:my-8">
+                <div className="bg-gray-100 p-3 sm:p-4 rounded border border-gray-300 flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto">
                   <input
                     type="checkbox"
                     id="recaptcha"
                     checked={isRecaptchaChecked}
                     onChange={handleRecaptchaChange}
-                    className="w-6 h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                   />
-                  <label htmlFor="recaptcha" className="text-gray-800 text-sm">
+                  <label htmlFor="recaptcha" className="text-gray-800 text-xs sm:text-sm">
                     I&apos;m not a robot
                   </label>
                   <div className="ml-auto">
@@ -198,7 +198,7 @@ const ContactSection: React.FC = () => {
               <div>
                 <button
                   onClick={handleSubmit}
-                  className="group relative cursor-pointer overflow-hidden bg-transparent border border-white text-white px-8 py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center gap-2"
+                  className="group relative cursor-pointer overflow-hidden bg-transparent border border-white text-white px-6 sm:px-8 py-3 sm:py-4 hover:bg-white hover:text-black transition-all duration-300 font-medium flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base"
                 >
                   <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
                     Nachricht Abschicken

@@ -56,16 +56,16 @@ const Banner = () => {
 
   if (hasError) {
     return (
-      <section className="relative w-full h-[60dvh] bg-gray-900 flex items-center justify-center">
-        <div className="text-center text-white">
-          <p>Video could not be loaded. Please check the file path.</p>
+      <section className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[60dvh] bg-gray-900 flex items-center justify-center">
+        <div className="text-center text-white px-4">
+          <p className="text-sm sm:text-base">Video could not be loaded. Please check the file path.</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="relative w-full h-full overflow-hidden bg-gray-900">
+    <section className="relative w-full h-[50vh] sm:h-[60vh] lg:h-full overflow-hidden bg-gray-900">
       {/* Loading indicator */}
       {isLoading && (
         <div className="absolute inset-0 bg-gray-900 flex items-center justify-center z-10">

@@ -15,19 +15,19 @@ interface AngebotSectionProps {
 // Service Item Component
 const ServiceItem: React.FC<ServiceItemProps> = ({ icon, title, description }) => {
   return (
-    <div className="flex flex-col items-center text-center space-y-4 group">
+    <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4 group">
       {/* Icon Circle */}
-      <div className="w-20 h-20 border-2 border-[#c6a87d] rounded-full flex items-center justify-center group-hover:bg-[#c6a87d] transition-all duration-300">
+      <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 border-2 border-[#c6a87d] rounded-full flex items-center justify-center group-hover:bg-[#c6a87d] transition-all duration-300">
         <div className="text-[#c6a87d] group-hover:text-[#080b0e] transition-colors duration-300">
           {icon}
         </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-xl font-medium text-white">{title}</h3>
+      <h3 className="text-lg sm:text-xl font-medium text-white">{title}</h3>
 
       {/* Description */}
-      <p className="text-gray-300 text-sm leading-relaxed max-w-xs">{description}</p>
+      <p className="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-xs">{description}</p>
     </div>
   );
 };
@@ -111,14 +111,14 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
   ];
 
   return (
-    <section className={`relative h-screen w-full ${className}`}>
+    <section className={`relative min-h-screen lg:h-screen w-full ${className}`}>
       {/* Split Background */}
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex flex-col lg:flex-row">
         {/* Left Side - Dark Background */}
-        <div className="w-1/2 bg-[#080b0e]"></div>
+        <div className="w-full lg:w-1/2 bg-[#080b0e] min-h-[50vh] lg:min-h-full"></div>
 
         {/* Right Side - Full Image */}
-        <div className="w-1/2 relative">
+        <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-full">
           <Image
             width={500}
             height={500}
@@ -131,19 +131,19 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 z-10">
-        <div className="container mx-auto px-6 h-full flex flex-col justify-center">
+        <div className="container mx-auto px-4 sm:px-6 h-full flex flex-col justify-center">
           {/* Header Section */}
-          <div className="mb-16">
-            <p className="text-[#c6a87d] text-sm font-light tracking-wide mb-4 miniver-regular">
+          <div className="mb-8 sm:mb-12 lg:mb-16 text-center lg:text-left">
+            <p className="text-[#c6a87d] text-xs sm:text-sm font-light tracking-wide mb-2 sm:mb-4 miniver-regular">
               Angebot
             </p>
-            <h2 className="text-4xl lg:text-6xl font-light text-white leading-tight max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight max-w-2xl mx-auto lg:mx-0">
               Entdecken Sie unser Angebot
             </h2>
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-4 gap-10 max-w-8xl mx-auto bg-card px-14 py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto bg-card px-4 sm:px-8 lg:px-14 py-8 sm:py-12 lg:py-20">
             {services.map((service, index) => (
               <ServiceItem
                 key={index}

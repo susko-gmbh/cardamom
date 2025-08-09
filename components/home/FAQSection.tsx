@@ -90,20 +90,25 @@ const FAQSection: React.FC = () => {
   const currentItem = faqData.find((item) => item.id === activeAccordion) || faqData[0];
 
   return (
-    <section className="min-h-screen bg-black text-white py-16">
+    <section className="min-h-screen bg-black text-white py-8 sm:py-12 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-amber-400 text-lg font-light italic mb-4">Häufige Fragen</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <p className="text-amber-400 text-base sm:text-lg font-light italic mb-2 sm:mb-4 miniver-regular">
+            Häufige Fragen
+          </p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight">
             Alles was Sie wissen müssen
           </h2>
         </div>
 
         {/* Three-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 items-center">
           {/* Left Images Column */}
-          <div ref={leftImageRef} className="h-[600px] overflow-y-hidden space-y-6 col-span-1">
+          <div
+            ref={leftImageRef}
+            className="h-[300px] sm:h-[400px] lg:h-[600px] overflow-y-hidden space-y-3 sm:space-y-4 lg:space-y-6 col-span-1 order-2 lg:order-1"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${activeAccordion}-left1`}
@@ -111,7 +116,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden"
+                className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden "
               >
                 <Image
                   width={600}
@@ -130,7 +135,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden"
+                className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden "
               >
                 <Image
                   width={600}
@@ -144,13 +149,13 @@ const FAQSection: React.FC = () => {
           </div>
 
           {/* Middle Accordion Column */}
-          <div className="lg:order-none col-span-3">
+          <div className="col-span-1 lg:col-span-3 order-1 lg:order-2">
             <Accordion
               type="single"
               collapsible
               value={activeAccordion}
               onValueChange={handleAccordionClick}
-              className="space-y-4"
+              className="space-y-2 sm:space-y-4"
             >
               {faqData.map((item) => (
                 <AccordionItem
@@ -159,17 +164,21 @@ const FAQSection: React.FC = () => {
                   className="border border-gray-700 rounded-none"
                 >
                   <AccordionTrigger
-                    className={`w-full px-6 py-4 text-left flex items-center rounded-none justify-between transition-all ${
+                    className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center rounded-none justify-between transition-all ${
                       activeAccordion === item.id
                         ? 'bg-primary text-white'
                         : 'bg-transparent text-white hover:bg-transparent'
                     }`}
                   >
-                    <span className="font-medium text-lg text-left">{item.question}</span>
+                    <span className="font-medium text-sm sm:text-base lg:text-lg text-left">
+                      {item.question}
+                    </span>
                   </AccordionTrigger>
                   <AccordionContent className="overflow-hidden bg-gray-900">
-                    <div className="px-6 py-4">
-                      <p className="text-gray-300 leading-relaxed">{item.answer}</p>
+                    <div className="px-4 sm:px-6 py-3 sm:py-4">
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        {item.answer}
+                      </p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -178,7 +187,10 @@ const FAQSection: React.FC = () => {
           </div>
 
           {/* Right Images Column */}
-          <div ref={rightImageRef} className="h-[600px] overflow-y-hidden col-span-1">
+          <div
+            ref={rightImageRef}
+            className="h-[300px] sm:h-[400px] md:block hidden lg:h-[600px] overflow-y-hidden col-span-1 order-3 lg:order-3"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${activeAccordion}-right`}
@@ -186,7 +198,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden"
+                className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden "
               >
                 <Image
                   width={600}

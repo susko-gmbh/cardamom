@@ -87,15 +87,15 @@ const TestimonialsSection: React.FC = () => {
   const maxSlides = Math.ceil(testimonials.length / itemsPerView);
 
   return (
-    <section className="bg-card py-16 lg:py-24 relative overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+    <section className="bg-card py-8 sm:py-12 lg:py-16 xl:py-24 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="mb-12 lg:mb-16">
+        <div className="mb-8 sm:mb-10 lg:mb-12 xl:mb-16">
           <div className="text-center lg:text-left max-w-2xl">
-            <span className="inline-block miniver-regular text-primary text-2xl font-semibold tracking-wider  mb-3">
+            <span className="inline-block miniver-regular text-primary text-lg sm:text-xl lg:text-2xl font-semibold tracking-wider mb-2 sm:mb-3">
               Kundentestimonials
             </span>
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6">
               Was sagen unsere Kunden?
             </h2>
           </div>
@@ -118,19 +118,19 @@ const TestimonialsSection: React.FC = () => {
               {testimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="px-4"
+                  className="px-2 sm:px-4"
                   style={{ width: `${100 / testimonials.length}%` }}
                 >
-                  <div className="bg-background px-16 py-20 h-full shadow-2xl  transition-all duration-300 ">
+                  <div className="bg-background px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-20 h-full shadow-2xl transition-all duration-300">
                     {/* Stars */}
-                    <div className="flex gap-1 mb-8 text-primary">
+                    <div className="flex gap-1 mb-4 sm:mb-6 lg:mb-8 text-primary">
                       {renderStars(testimonial.rating)}
                     </div>
 
                     {/* Content */}
                     <div className="relative">
-                      <Quote className="absolute -top-20 -right-2 w-12 h-12 text-primary/20 transform rotate-180" />
-                      <p className="text-gray-300 leading-relaxed text-base lg:text-lg mb-6 relative z-10">
+                      <Quote className="absolute -top-8 sm:-top-12 lg:-top-20 -right-1 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary/20 transform rotate-180" />
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 relative z-10">
                         {testimonial.content}
                       </p>
                     </div>
@@ -169,12 +169,12 @@ const TestimonialsSection: React.FC = () => {
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center space-x-3 mt-12">
+        <div className="flex justify-center space-x-2 sm:space-x-3 mt-8 sm:mt-10 lg:mt-12">
           {Array.from({ length: maxSlides }, (_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
+              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 cursor-pointer ${
                 currentSlide === index ? 'bg-primary scale-125' : 'bg-gray-600 hover:bg-gray-500'
               }`}
               aria-label={`Go to slide ${index + 1}`}

@@ -2,7 +2,7 @@
 const ScrollToTop = () => {
   return (
     <div>
-      <div className="fixed bottom-8 right-8">
+      <div className="fixed bottom-8 z-50 right-8">
         <button
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
