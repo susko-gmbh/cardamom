@@ -18,7 +18,7 @@ const miniver = Miniver({
 export const metadata: Metadata = {
   title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
   description:
-    'Experience the finest Indian cuisine at Cardamom Restaurant  . Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
+    'Erleben Sie feinste indische Küche im Cardamom Restaurant. Authentische Aromen, frische Zutaten und außergewöhnlicher Service. Reservieren Sie noch heute Ihren Tisch für ein unvergessliches kulinarisches Erlebnis.',
   keywords:
     'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, susko, susko restaurant, susko cardamom, susko hamburg',
   authors: [{ name: 'Susko', url: 'https://susko.de' }],
