@@ -10,7 +10,7 @@ const Banner = () => {
         loop
         playsInline
         preload="auto"
-        // poster="/home/traditionMeets.jpg"
+        poster="/home/traditionMeets.jpg"
       >
         <source src="/home/hero.mp4" type="video/mp4" />
         Your browser does not support the video tag.
