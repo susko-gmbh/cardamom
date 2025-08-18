@@ -6,7 +6,7 @@ const Banner = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Kill any video loading after 3 seconds - HARD STOP
@@ -19,6 +19,7 @@ const Banner = () => {
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
       }
     };
   }, [videoLoaded]);
@@ -27,6 +28,7 @@ const Banner = () => {
     setVideoLoaded(true);
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
   };
 
@@ -34,6 +36,7 @@ const Banner = () => {
     setShowFallback(true);
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
   };
 
