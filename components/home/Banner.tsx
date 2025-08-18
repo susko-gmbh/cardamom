@@ -5,16 +5,17 @@ import { useEffect, useState, useRef } from 'react';
 const Banner = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    // Kill any video loading after 3 seconds - HARD STOP
+    // Give video 5 seconds to load and start playing
     timeoutRef.current = setTimeout(() => {
-      if (!videoLoaded) {
+      if (!videoLoaded || !isPlaying) {
         setShowFallback(true);
       }
-    }, 3000);
+    }, 5000);
 
     return () => {
       if (timeoutRef.current) {
@@ -22,13 +23,23 @@ const Banner = () => {
         timeoutRef.current = null;
       }
     };
-  }, [videoLoaded]);
+  }, [videoLoaded, isPlaying]);
 
   const handleVideoLoad = () => {
     setVideoLoaded(true);
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
+    // Try to play the video immediately when it's loaded
+    const video = videoRef.current;
+    if (video) {
+      video.play().then(() => {
+        setIsPlaying(true);
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
+      }).catch((error) => {
+        console.log('Autoplay failed, showing fallback');
+        setShowFallback(true);
+      });
     }
   };
 
@@ -58,7 +69,7 @@ const Banner = () => {
 
   return (
     <section className="relative w-full h-[50vh] sm:h-[60vh] lg:h-full overflow-hidden bg-gray-900">
-      {/* Loading state - shows until video loads */}
+      {/* Show image while video loads */}
       {!videoLoaded && (
         <div 
           className="absolute inset-0 z-10"
@@ -72,29 +83,21 @@ const Banner = () => {
         </div>
       )}
 
-      {/* Video - hidden until loaded */}
+      {/* Video - loads in background */}
       <video
         ref={videoRef}
-        className={`w-full h-full object-cover transition-opacity duration-500 ${
-          videoLoaded ? 'opacity-100' : 'opacity-0'
+        className={`w-full h-full object-cover transition-opacity duration-1000 ${
+          videoLoaded && isPlaying ? 'opacity-100' : 'opacity-0'
         }`}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         poster="/home/traditionMeets.jpg"
         onLoadedData={handleVideoLoad}
-        onCanPlayThrough={handleVideoLoad}
+        onCanPlay={handleVideoLoad}
         onError={handleVideoError}
-        onLoadStart={() => {
-          // Try to play immediately on mobile
-          const video = videoRef.current;
-          if (video) {
-            video.play().catch(() => {
-              // If autoplay fails, that's fine - user can tap to play
-            });
-          }
-        }}
+        autoPlay
       >
         <source src="/home/hero.mp4" type="video/mp4" />
       </video>
