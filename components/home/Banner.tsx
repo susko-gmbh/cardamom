@@ -6,8 +6,17 @@ const Banner = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    // Detect mobile
+    const checkMobile = () => {
+      setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    };
+    checkMobile();
+  }, []);
 
   useEffect(() => {
     // Give video 5 seconds to load and start playing
@@ -30,16 +39,27 @@ const Banner = () => {
     // Try to play the video immediately when it's loaded
     const video = videoRef.current;
     if (video) {
-      video.play().then(() => {
-        setIsPlaying(true);
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
-          timeoutRef.current = null;
-        }
-      }).catch((error) => {
-        console.log('Autoplay failed, showing fallback');
-        setShowFallback(true);
-      });
+      // For mobile, we need to be more aggressive about playing
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          setIsPlaying(true);
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+        }).catch((error) => {
+          // On mobile, autoplay might fail but video is still loaded
+          // Show video with controls so user can tap to play
+          console.log('Autoplay blocked, but video is ready');
+          setIsPlaying(true); // Show the video anyway
+          if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+          }
+        });
+      }
     }
   };
 
@@ -98,6 +118,17 @@ const Banner = () => {
         onCanPlay={handleVideoLoad}
         onError={handleVideoError}
         autoPlay
+        controls={isMobile} // Show controls on mobile so user can tap to play
+        onClick={() => {
+          // Handle click to play on mobile
+          if (isMobile && videoRef.current) {
+            videoRef.current.play().then(() => {
+              setIsPlaying(true);
+            }).catch(() => {
+              // If still fails, at least we tried
+            });
+          }
+        }}
       >
         <source src="/home/hero.mp4" type="video/mp4" />
       </video>
