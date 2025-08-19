@@ -36,16 +36,8 @@ const Banner = () => {
     console.log('User agent:', navigator.userAgent);
     console.log('Window width:', window.innerWidth);
 
-    // For mobile devices, show play button immediately due to large file size
-    if (isMobile) {
-      console.log('Mobile detected, requiring user interaction');
-      setIsLoading(false);
-      setNeedsUserInteraction(true);
-      return;
-    }
-
     const handleCanPlay = () => {
-      console.log('Video can play');
+      console.log('Video can play, attempting autoplay');
       setIsLoading(false);
 
       const playPromise = video.play();
@@ -54,6 +46,7 @@ const Banner = () => {
           .then(() => {
             console.log('Autoplay successful');
             setNeedsUserInteraction(false);
+            setIsPlaying(true);
           })
           .catch((error) => {
             console.log('Autoplay failed:', error);
@@ -66,6 +59,7 @@ const Banner = () => {
       console.error('Video error:', e);
       setHasError(true);
       setIsLoading(false);
+      setNeedsUserInteraction(true);
     };
 
     const handleLoadStart = () => {
@@ -76,11 +70,13 @@ const Banner = () => {
       console.log('Video metadata loaded');
     };
 
+    // Longer timeout for mobile due to larger file size, shorter for desktop
+    const timeoutDuration = isMobile ? 8000 : 5000;
     const loadTimeout = setTimeout(() => {
       console.log('Video load timeout, showing play button');
       setIsLoading(false);
       setNeedsUserInteraction(true);
-    }, 3000); // Reduced timeout for faster UX
+    }, timeoutDuration);
 
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('error', handleError);
@@ -200,6 +196,7 @@ const Banner = () => {
       <video
         ref={videoRef}
         className="w-full h-full object-cover"
+        autoPlay
         muted
         loop
         playsInline
@@ -232,7 +229,7 @@ const Banner = () => {
 
       {/* Play button overlay */}
       {needsUserInteraction && (
-        <div className="absolute inset-0 z-20 flex items-center justify-center">
+        <div className="absolute hidden inset-0 z-20 fle items-center justify-center">
           <div className="absolute inset-0 bg-black/30" />
           <motion.button
             whileTap={{ scale: 0.8 }}
