@@ -14,6 +14,55 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: '/hohe-bleichen.html',
+        destination: '/hohe-bleichen',
+        permanent: true,
+      },
+      {
+        source: '/westfield.html',
+        destination: '/westfield',
+        permanent: true,
+      },
+      {
+        source: '/kontakt.html',
+        destination: '/kontakt',
+        permanent: true,
+      },
+      {
+        source: '/about-us.html',
+        destination: '/about-us',
+        permanent: true,
+      },
+      {
+        source: '/catering.html',
+        destination: '/catering',
+        permanent: true,
+      },
+      {
+        source: '/events.html',
+        destination: '/events',
+        permanent: true,
+      },
+      {
+        source: '/hohe-bleichen-menu.html',
+        destination: '/hohe-bleichen-menu',
+        permanent: true,
+      },
+      {
+        source: '/westfield-menu.html',
+        destination: '/westfield-menu',
+        permanent: true,
+      },
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
