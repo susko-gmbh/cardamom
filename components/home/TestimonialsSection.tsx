@@ -76,6 +76,18 @@ const TestimonialsSection: React.FC = () => {
     setCurrentSlide(index);
   };
 
+  // Create slides based on itemsPerView
+  const createSlides = () => {
+    const slides = [];
+    for (let i = 0; i < testimonials.length; i += itemsPerView) {
+      const slideTestimonials = testimonials.slice(i, i + itemsPerView);
+      slides.push(slideTestimonials);
+    }
+    return slides;
+  };
+
+  const slides = createSlides();
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
@@ -84,8 +96,6 @@ const TestimonialsSection: React.FC = () => {
       />
     ));
   };
-
-  const maxSlides = Math.ceil(testimonials.length / itemsPerView);
 
   return (
     <section className="bg-card py-8 sm:py-12 lg:py-16 xl:py-24 relative overflow-hidden">
@@ -112,57 +122,73 @@ const TestimonialsSection: React.FC = () => {
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${currentSlide * 100}%)`,
-                width: `${maxSlides * 100}%`,
+                transform: `translateX(-${currentSlide * (100 / slides.length)}%)`,
+                width: `${slides.length * 100}%`,
               }}
             >
-              {Array.from({ length: maxSlides }, (_, slideIndex) => (
+              {slides.map((slideTestimonials, slideIndex) => (
                 <div
                   key={slideIndex}
-                  className="flex-shrink-0"
-                  style={{ width: `${100 / maxSlides}%` }}
+                  className="flex gap-2 sm:gap-4"
+                  style={{ width: `${100 / slides.length}%` }}
                 >
-                  <div className="flex h-full">
-                    {testimonials
-                      .slice(slideIndex * itemsPerView, slideIndex * itemsPerView + itemsPerView)
-                      .map((testimonial) => (
-                        <div key={testimonial.id} className="px-2 sm:px-4 flex-1">
-                          <div className="bg-background px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-20 h-full shadow-2xl transition-all duration-300">
-                            {/* Stars */}
-                            <div className="flex gap-1 mb-4 sm:mb-6 lg:mb-8 text-primary">
-                              {renderStars(testimonial.rating)}
-                            </div>
+                  {slideTestimonials.map((testimonial) => (
+                    <div
+                      key={testimonial.id}
+                      className={`px-2 sm:px-4 ${itemsPerView === 1 ? 'w-full' : 'w-1/2'}`}
+                    >
+                      <div className="bg-secondary px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-20 h-full shadow-2xl transition-all duration-300">
+                        {/* Stars */}
+                        <div className="flex gap-1 mb-4 sm:mb-6 lg:mb-8 text-primary">
+                          {renderStars(testimonial.rating)}
+                        </div>
 
-                            {/* Content */}
-                            <div className="relative">
-                              <Quote className="absolute -top-8 sm:-top-12 lg:-top-20 -right-1 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary/20 transform rotate-180" />
-                              <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 relative z-10">
-                                {testimonial.content}
-                              </p>
-                            </div>
+                        {/* Content */}
+                        <div className="relative">
+                          <Quote className="absolute -top-8 sm:-top-12 lg:-top-20 -right-1 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary/20 transform rotate-180" />
+                          <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 relative z-10">
+                            {testimonial.content}
+                          </p>
+                        </div>
 
-                            {/* Avatar placeholder - commented out as in original */}
-                            <div className="flex items-center">
-                              {/* <div className="w-12 h-12 bg-gradient-to-br from-primary to-amber-600 rounded-full mr-4 opacity-30"></div> */}
-                              <div>
-                                {/* Names commented out as in original */}
-                                {/* <h5 className="text-white font-semibold text-lg">Name</h5> */}
-                                {/* <span className="text-primary text-sm">Position</span> */}
-                              </div>
-                            </div>
+                        {/* Avatar placeholder - commented out as in original */}
+                        <div className="flex items-center">
+                          {/* <div className="w-12 h-12 bg-gradient-to-br from-primary to-amber-600 rounded-full mr-4 opacity-30"></div> */}
+                          <div>
+                            {/* Names commented out as in original */}
+                            {/* <h5 className="text-white font-semibold text-lg">Name</h5> */}
+                            {/* <span className="text-primary text-sm">Position</span> */}
                           </div>
                         </div>
-                      ))}
-                  </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Navigation Arrows */}
+          {/* <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl z-20"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl z-20"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button> */}
         </div>
 
         {/* Dots Navigation */}
         <div className="flex justify-center space-x-2 sm:space-x-3 mt-8 sm:mt-10 lg:mt-12">
-          {Array.from({ length: maxSlides }, (_, index) => (
+          {Array.from({ length: slides.length }, (_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
