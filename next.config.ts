@@ -61,6 +61,11 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/impressum.html',
+        destination: '/impressum',
+        permanent: true,
+      },
     ];
   },
 };
