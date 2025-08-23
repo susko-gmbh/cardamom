@@ -1,6 +1,7 @@
 'use client';
 import { Quote, Star } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import type React from 'react';
+import { useEffect, useState } from 'react';
 
 interface Testimonial {
   id: number;
@@ -111,61 +112,52 @@ const TestimonialsSection: React.FC = () => {
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
-                transform: `translateX(-${currentSlide * (100 / itemsPerView)}%)`,
-                width: `${(testimonials.length * 100) / itemsPerView}%`,
+                transform: `translateX(-${currentSlide * 100}%)`,
+                width: `${maxSlides * 100}%`,
               }}
             >
-              {testimonials.map((testimonial) => (
+              {Array.from({ length: maxSlides }, (_, slideIndex) => (
                 <div
-                  key={testimonial.id}
-                  className="px-2 sm:px-4"
-                  style={{ width: `${100 / testimonials.length}%` }}
+                  key={slideIndex}
+                  className="flex-shrink-0"
+                  style={{ width: `${100 / maxSlides}%` }}
                 >
-                  <div className="bg-background px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-20 h-full shadow-2xl transition-all duration-300">
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-4 sm:mb-6 lg:mb-8 text-primary">
-                      {renderStars(testimonial.rating)}
-                    </div>
+                  <div className="flex h-full">
+                    {testimonials
+                      .slice(slideIndex * itemsPerView, slideIndex * itemsPerView + itemsPerView)
+                      .map((testimonial) => (
+                        <div key={testimonial.id} className="px-2 sm:px-4 flex-1">
+                          <div className="bg-background px-6 sm:px-10 lg:px-16 py-8 sm:py-12 lg:py-20 h-full shadow-2xl transition-all duration-300">
+                            {/* Stars */}
+                            <div className="flex gap-1 mb-4 sm:mb-6 lg:mb-8 text-primary">
+                              {renderStars(testimonial.rating)}
+                            </div>
 
-                    {/* Content */}
-                    <div className="relative">
-                      <Quote className="absolute -top-8 sm:-top-12 lg:-top-20 -right-1 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary/20 transform rotate-180" />
-                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 relative z-10">
-                        {testimonial.content}
-                      </p>
-                    </div>
+                            {/* Content */}
+                            <div className="relative">
+                              <Quote className="absolute -top-8 sm:-top-12 lg:-top-20 -right-1 sm:-right-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary/20 transform rotate-180" />
+                              <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg mb-4 sm:mb-6 relative z-10">
+                                {testimonial.content}
+                              </p>
+                            </div>
 
-                    {/* Avatar placeholder - commented out as in original */}
-                    <div className="flex items-center">
-                      {/* <div className="w-12 h-12 bg-gradient-to-br from-primary to-amber-600 rounded-full mr-4 opacity-30"></div> */}
-                      <div>
-                        {/* Names commented out as in original */}
-                        {/* <h5 className="text-white font-semibold text-lg">Name</h5> */}
-                        {/* <span className="text-primary text-sm">Position</span> */}
-                      </div>
-                    </div>
+                            {/* Avatar placeholder - commented out as in original */}
+                            <div className="flex items-center">
+                              {/* <div className="w-12 h-12 bg-gradient-to-br from-primary to-amber-600 rounded-full mr-4 opacity-30"></div> */}
+                              <div>
+                                {/* Names commented out as in original */}
+                                {/* <h5 className="text-white font-semibold text-lg">Name</h5> */}
+                                {/* <span className="text-primary text-sm">Position</span> */}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                   </div>
                 </div>
               ))}
             </div>
           </div>
-
-          {/* Navigation Arrows */}
-          {/* <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl z-20"
-            aria-label="Previous testimonial"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary/90 hover:bg-primary rounded-full flex items-center justify-center text-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl z-20"
-            aria-label="Next testimonial"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button> */}
         </div>
 
         {/* Dots Navigation */}
@@ -174,7 +166,7 @@ const TestimonialsSection: React.FC = () => {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 cursor-pointer ${
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 cursor-pointer ${
                 currentSlide === index ? 'bg-primary scale-125' : 'bg-gray-600 hover:bg-gray-500'
               }`}
               aria-label={`Go to slide ${index + 1}`}
