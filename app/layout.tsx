@@ -16,29 +16,29 @@ const miniver = Miniver({
 });
 
 export const metadata: Metadata = {
-  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+  title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
   description:
-    'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service. Book your table today for an unforgettable dining experience.',
+    'Erleben Sie feinste indische Küche im Cardamom Restaurant. Authentische Aromen, frische Zutaten und außergewöhnlicher Service. Reservieren Sie noch heute Ihren Tisch für ein unvergessliches kulinarisches Erlebnis.',
   keywords:
-    'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, susko, susko restaurant, susko cardamom, susko hamburg',
-  authors: [{ name: 'Susko', url: 'https://susko.de' }],
-  creator: 'Susko',
-  publisher: 'Susko - Cardamom Restaurant',
+    'Indian restaurant, authentic Indian food, fine dining, curry, tandoor, vegetarian, vegan options, restaurant reservation, Indian cuisine, spices, cardamom, restaurant, cardamom, hamburg',
+  authors: [{ name: 'Cardamom Restaurant', url: 'https://www.cardamom-hamburg.de' }],
+  creator: 'Cardamom Restaurant',
+  publisher: 'Cardamom Restaurant',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://cardamom-restaurant.com'),
+  metadataBase: new URL('https://www.cardamom-hamburg.de'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service.',
-    url: 'https://cardamom-restaurant.com',
-    siteName: 'Cardamom Restaurant by Susko',
+      'Experience the finest Indian cuisine at Cardamom Restaurant. Authentic flavors, fresh ingredients, and exceptional service.',
+    url: 'https://www.cardamom-hamburg.de',
+    siteName: 'Cardamom Restaurant',
     images: [
       {
         url: '/og-image.jpg',
@@ -52,12 +52,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining | Susko',
+    title: 'Cardamom Restaurant - Authentic Indian Cuisine & Fine Dining',
     description:
-      'Experience the finest Indian cuisine at Cardamom Restaurant by Susko. Authentic flavors, fresh ingredients, and exceptional service.',
+      'Experience the finest Indian cuisine at Cardamom Restaurant. Authentic flavors, fresh ingredients, and exceptional service.',
     images: ['/og-image.jpg'],
-    creator: '@susko',
-    site: '@susko',
+    creator: '@cardamom_hamburg',
+    site: '@cardamom_hamburg',
   },
   robots: {
     index: true,
@@ -93,58 +93,37 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
+
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Restaurant",
-              "name": "Cardamom Restaurant",
-              "description": "Authentic Indian cuisine and fine dining experience in Hamburg",
-              "url": "https://cardamom-restaurant.com",
-              "telephone": "+49-40-123456789",
-              "priceRange": "$$",
-              "servesCuisine": "Indian",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Hohe Bleichen 10",
-                "addressLocality": "Hamburg",
-                "postalCode": "20354",
-                "addressCountry": "DE"
+              '@context': 'https://schema.org',
+              '@type': 'Restaurant',
+              name: 'Cardamom Restaurant',
+              description: 'Authentic Indian cuisine and fine dining experience in Hamburg',
+              url: 'https://www.cardamom-hamburg.de',
+              telephone: '+49-40-123456789',
+              priceRange: '$$',
+              servesCuisine: 'Indian',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Hohe Bleichen 10',
+                addressLocality: 'Hamburg',
+                postalCode: '20354',
+                addressCountry: 'DE',
               },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 53.5511,
-                "longitude": 9.9937
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 53.5511,
+                longitude: 9.9937,
               },
-              "openingHours": [
-                "Mo-Su 11:00-23:00"
-              ],
-              "acceptsReservations": true,
-              "hasMenu": "https://cardamom-restaurant.com/menu",
-              "image": "https://cardamom-restaurant.com/og-image.jpg",
-              "parentOrganization": {
-                "@type": "Organization",
-                "name": "Susko",
-                "url": "https://susko.de",
-                "description": "Premium restaurant and hospitality company",
-                "founder": {
-                  "@type": "Person",
-                  "name": "Susko"
-                }
-              },
-              "brand": {
-                "@type": "Brand",
-                "name": "Susko"
-              },
-              "sameAs": [
-                "https://www.instagram.com/susko",
-                "https://www.facebook.com/susko",
-                "https://twitter.com/susko"
-              ]
-            })
+              openingHours: ['Mo-Su 11:00-23:00'],
+              acceptsReservations: true,
+              hasMenu: 'https://www.cardamom-hamburg.de/menu',
+              image: 'https://www.cardamom-hamburg.de/og-image.jpg',
+            }),
           }}
         />
       </head>

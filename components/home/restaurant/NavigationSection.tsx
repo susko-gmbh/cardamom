@@ -33,7 +33,6 @@ const NavigationSection = () => {
             title={card.title}
             imageAlt={card.imageAlt}
             imageUrl={card.imageUrl}
-            gradientColors={card.gradientColors}
           />
         ))}
       </div>

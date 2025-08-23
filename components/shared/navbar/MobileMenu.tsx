@@ -17,7 +17,7 @@ const MobileMenu = () => {
       <SheetTrigger className="lg:hidden text-foreground hover:text-primary transition-colors">
         <Menu className="h-6 w-6" />
       </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] bg-card border-border">
+      <SheetContent side="right" className="w-[300px] bg-card border-border overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="text-foreground text-left">Menu</SheetTitle>
         </SheetHeader>

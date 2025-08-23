@@ -116,7 +116,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4 }}
-                className="aspect-[4/3] bg-gradient-to-br from-purple-900 via-purple-800 to-pink-800 overflow-hidden "
+                className="aspect-[4/3] bg-card overflow-hidden "
               >
                 <Image
                   width={600}
@@ -138,7 +138,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="aspect-square bg-gradient-to-br from-orange-600 to-red-600 overflow-hidden "
+                className="aspect-square bg-card from-orange-600 to-red-600 overflow-hidden "
               >
                 <Image
                   width={600}
@@ -204,7 +204,7 @@ const FAQSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="aspect-[3/4] bg-gradient-to-br from-green-700 to-teal-600 overflow-hidden "
+                className="aspect-[3/4] bg-card overflow-hidden "
               >
                 <Image
                   width={600}

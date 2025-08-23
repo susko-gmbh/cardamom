@@ -81,6 +81,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     return (
       <Image
         {...imageProps}
+        alt={alt}
         fill
       />
     );
@@ -89,6 +90,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   return (
     <Image
       {...imageProps}
+      alt={alt}
       width={width}
       height={height}
     />
