@@ -1,8 +1,9 @@
+"use client";
 import React from 'react';
 
 const RestaurantReservation: React.FC = () => {
   return (
-    <section className="min-h-[60vh] sm:min-h-96 relative flex items-center justify-center py-12 sm:py-16">
+    <section id="reservation" className="min-h-[60vh] sm:min-h-96 relative flex items-center justify-center py-12 sm:py-16">
       {/* Fixed Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -25,7 +26,10 @@ const RestaurantReservation: React.FC = () => {
 
         {/* Location Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center max-w-md sm:max-w-none mx-auto">
-          <button className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-primary text-black font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2">
+          <button
+            className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-white hover:bg-primary text-black font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-primary/50 flex items-center justify-center gap-2"
+            onClick={() => window.open('https://reservation.dish.co/landingPage/hydra-82fbb0fc-e083-4e9e-b131-a196d1651064', '_blank')}
+            >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Hohe Bleichen
             </span>
@@ -33,7 +37,10 @@ const RestaurantReservation: React.FC = () => {
             <div className="bg-primary h-px w-7 opacity-100 ml-4 transition-all duration-500 group-hover:scale-100 group-hover:opacity-0"></div>
           </button>
 
-          <button className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:bg-white/10 text-foreground font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2">
+          <button
+            className="group relative overflow-hidden px-6 sm:px-8 py-3 sm:py-4 bg-transparent hover:bg-white/10 text-foreground font-medium text-base sm:text-lg transition-all duration-300 backdrop-blur-sm border border-white/30 flex items-center justify-center gap-2"
+            onClick={() => window.open('https://reservation.dish.co/landingPage/hydra-00847480-0346-11f0-bea1-b9a5dc15ca0b', '_blank')}
+            >
             <span className="relative z-10 transition-transform duration-500 group-hover:translate-x-11">
               Cardamom Westfield
             </span>

@@ -111,7 +111,7 @@ const AngebotSection: React.FC<AngebotSectionProps> = ({ className = '' }) => {
   ];
 
   return (
-    <section className={`relative min-h-screen lg:h-screen w-full ${className}`}>
+    <section id="angebot" className={`relative min-h-screen lg:h-screen w-full ${className}`}>
       {/* Split Background */}
       <div className="absolute inset-0 flex flex-col lg:flex-row">
         {/* Left Side - Dark Background */}

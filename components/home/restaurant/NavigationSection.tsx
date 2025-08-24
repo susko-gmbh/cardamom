@@ -6,7 +6,9 @@ const NavigationSection = () => {
       title: 'Tisch reservieren',
       imageAlt: 'Table reservation',
       imageUrl: '/home/reserveTable.jpg',
+
       gradientColors: 'from-amber-100 to-amber-200',
+      href: '#reservation'
     },
     {
       title: 'Unser Angebot',
@@ -14,6 +16,7 @@ const NavigationSection = () => {
       imageUrl: '/home/ourRange.jpg',
 
       gradientColors: 'from-yellow-100 to-yellow-200',
+      href: '#angebot'
     },
     {
       title: 'Kontakt',
@@ -21,6 +24,7 @@ const NavigationSection = () => {
       imageUrl: '/home/contact.jpg',
 
       gradientColors: 'from-orange-100 to-orange-200',
+      href: '#kontakt'
     },
   ];
 
@@ -28,12 +32,17 @@ const NavigationSection = () => {
     <div className="container mx-auto px-6 py-16">
       <div className="grid md:grid-cols-3 gap-8">
         {cards.map((card, index) => (
-          <NavigationCard
+          <a
             key={index}
-            title={card.title}
-            imageAlt={card.imageAlt}
-            imageUrl={card.imageUrl}
-          />
+            href={card.href || '#'}
+            className="block"
+          >
+            <NavigationCard
+              title={card.title}
+              imageAlt={card.imageAlt}
+              imageUrl={card.imageUrl}
+            />
+          </a>
         ))}
       </div>
     </div>
