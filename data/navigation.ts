@@ -59,7 +59,15 @@ export const headerContacts: HeaderContact[] = [
     icon: Phone,
     label: '+49 40 80 08 04 18',
     href: 'tel:+4940800804018',
-    mobileLabel: '+49 40 80 08 04 18',
+    mobileLabel: 'HB',
+    branch: 'Hohe Bleichen'
+  },
+  {
+    icon: Phone,
+    label: '+49 40 80 08 04 19',
+    href: 'tel:+4940800804019',
+    mobileLabel: 'WF',
+    branch: 'Westfield'
   },
   {
     icon: Mail,

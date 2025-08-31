@@ -17,6 +17,7 @@ export interface HeaderContact {
   label: string;
   href: string;
   mobileLabel: string;
+  branch?: string;
 }
 
 export interface Location {
