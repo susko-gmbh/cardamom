@@ -1,5 +1,5 @@
 import { headerContacts, locations, instagramUrl } from '@/data/navigation';
-import { Instagram } from 'lucide-react';
+import { Instagram, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 interface HeaderTopProps {
@@ -17,20 +17,48 @@ const HeaderTop = ({ isSticky }: HeaderTopProps) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center space-x-6 lg:space-x-8">
-            {headerContacts.map((contact, index) => {
-              const IconComponent = contact.icon;
-              return (
-                <Link
-                  key={index}
-                  href={contact.href}
-                  className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors text-xs lg:text-sm"
-                >
-                  <IconComponent className="h-3 w-3 lg:h-4 lg:w-4" />
-                  <span className="hidden sm:inline">{contact.label}</span>
-                  <span className="sm:hidden">{contact.mobileLabel}</span>
-                </Link>
-              );
-            })}
+            {/* Phone Numbers - Group together */}
+            <div className="flex items-center space-x-1 text-muted-foreground text-xs lg:text-sm">
+              <Phone className="h-3 w-3 lg:h-4 lg:w-4" />
+              <div className="flex items-center space-x-2">
+                {headerContacts
+                  .filter(contact => contact.icon === Phone)
+                  .map((contact, index) => (
+                    <Link
+                      key={index}
+                      href={contact.href}
+                      className="hover:text-primary transition-colors"
+                    >
+                      <span className="hidden sm:inline">{contact.label}</span>
+                      <span className="sm:hidden">{contact.mobileLabel}</span>
+                    </Link>
+                  ))
+                  .reduce((prev, curr, index) => [
+                    ...prev,
+                    index > 0 && <span key={`sep-${index}`} className="text-muted-foreground/50">|</span>,
+                    curr
+                  ].filter(Boolean), [] as React.ReactNode[])
+                }
+              </div>
+            </div>
+            
+            {/* Email */}
+            {headerContacts
+              .filter(contact => contact.icon !== Phone)
+              .map((contact, index) => {
+                const IconComponent = contact.icon;
+                return (
+                  <Link
+                    key={index}
+                    href={contact.href}
+                    className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors text-xs lg:text-sm"
+                  >
+                    <IconComponent className="h-3 w-3 lg:h-4 lg:w-4" />
+                    <span className="hidden sm:inline">{contact.label}</span>
+                    <span className="sm:hidden">{contact.mobileLabel}</span>
+                  </Link>
+                );
+              })}
 
             <div className="hidden md:flex items-center space-x-6">
               {locations.map((location, index) => {

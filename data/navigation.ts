@@ -57,9 +57,17 @@ export const menuItems: MenuItem[] = [
 export const headerContacts: HeaderContact[] = [
   {
     icon: Phone,
-    label: '+49 40 80 08 04 18',
-    href: 'tel:+4940800804018',
-    mobileLabel: '+49 40 80 08 04 18',
+    label: '040 80080418',
+    href: 'tel:+04080080418',
+    mobileLabel: 'HB',
+    branch: 'Hohe Bleichen',
+  },
+  {
+    icon: Phone,
+    label: '040 83504474',
+    href: 'tel:+04083504474',
+    mobileLabel: 'WF',
+    branch: 'Westfield',
   },
   {
     icon: Mail,
@@ -75,15 +83,15 @@ export const locations: Location[] = [
 ];
 
 export const reservationItems: SubMenuItem[] = [
-  { 
-    label: 'Hohe Bleichen', 
+  {
+    label: 'Hohe Bleichen',
     href: 'https://reservation.dish.co/landingPage/hydra-82fbb0fc-e083-4e9e-b131-a196d1651064',
-    external: true 
+    external: true,
   },
-  { 
-    label: 'Westfield', 
+  {
+    label: 'Westfield',
     href: 'https://reservation.dish.co/landingPage/hydra-00847480-0346-11f0-bea1-b9a5dc15ca0b',
-    external: true 
+    external: true,
   },
 ];
 
