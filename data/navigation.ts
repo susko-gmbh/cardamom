@@ -57,15 +57,15 @@ export const menuItems: MenuItem[] = [
 export const headerContacts: HeaderContact[] = [
   {
     icon: Phone,
-    label: '+49 40 80 08 04 19',
-    href: 'tel:+4940800804018',
+    label: '040 80080418',
+    href: 'tel:+04080080418',
     mobileLabel: 'HB',
     branch: 'Hohe Bleichen',
   },
   {
     icon: Phone,
-    label: '+49 40 80 08 04 19',
-    href: 'tel:+4940800804019',
+    label: '040 83504474',
+    href: 'tel:+04083504474',
     mobileLabel: 'WF',
     branch: 'Westfield',
   },
